@@ -1,0 +1,12 @@
+#.vocodeフォルダを無視する
+/.vscode
+
+#.DS_Storeを無視する
+.DS_Store
+
+#公開用パスワード設定ファイルを無視する
+.htaccess
+.htpasswd
+
+#memoは無視する
+/memo.txt
