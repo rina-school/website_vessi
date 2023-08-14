@@ -1,0 +1,37 @@
+@use './function' as f;
+
+// フォントファミリー
+$fontFamily: 'Lora', 'Noto Sans JP', sans-serif;
+
+// サイズ(px値→vw値)計算の基準となるviewport(px値)
+$pcViewPort: 1180;
+$spViewPort: 375;
+
+// カラーコード
+$primaryColor: #8FC6AB;
+$subPrimaryColor: #CDE0DD;
+// $subPrimaryColor: #DFEBE9;
+// $subPrimaryColor: #E5EFED;
+// $subPrimaryColor: #F7FAF9;
+$subPrimaryColor2: #F6F9F8;
+$logoColor: #005864;
+$textColor: #2C2C2C;
+$voiceStarColor: #FDB603;
+$white: #fff;
+
+// ブレークポイント
+$breakPointPc: 768px;
+
+// 特定要素の高さ
+$pcHeaderHeight: 70px;
+$spHeaderHeight: 50px;
+$pcSectionPaddingHeight: 120px;
+$spSectionPaddingHeight: 64px;
+$pcSectionMarginWidth: 30px;
+$spSectionMarginWidth: 16px;
+
+// z-index
+// $zindexHeader: 1000;
+// $zindexSpBottomBtn: 100;
+// $zindexSpSlickArrowBtn: 10;
+// $zindexCourseDecoration: 1;
