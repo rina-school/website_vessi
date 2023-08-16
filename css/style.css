@@ -301,7 +301,6 @@ li {
 /* Project ------------ */
 .p-hero {
   background-color: #CDE0DD;
-  position: relative;
   width: 100%;
 }
 .p-hero__bg__list__item__img {
@@ -314,8 +313,8 @@ li {
 }
 .p-hero__text {
   position: absolute;
-  right: 7%;
-  top: 50%;
+  right: 18%;
+  top: calc(50% + 35px);
   transform: translateY(-50%);
 }
 .p-hero__text__catchcopy__content.js-animation {
@@ -387,11 +386,9 @@ li {
 }
 .p-hero__scroll span::before {
   content: "";
-  /*描画位置*/
   position: absolute;
   bottom: -0.375rem;
   right: -0.375rem;
-  /*矢印の形状*/
   width: 0.09375rem;
   height: 1.25rem;
   background: #fff;
@@ -399,11 +396,9 @@ li {
 }
 .p-hero__scroll span::after {
   content: "";
-  /*描画位置*/
   position: absolute;
   bottom: -0.375rem;
   right: 0;
-  /*矢印の形状*/
   width: 0.09375rem;
   height: 3.125rem;
   background: #fff;
@@ -516,6 +511,17 @@ li {
 }
 .p-about__founders__list__item p {
   margin-top: 1rem;
+}
+
+.p-wave {
+  background-color: #CDE0DD;
+  position: relative;
+}
+.p-wave__canvas {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 /* Utility ------------ *//*# sourceMappingURL=style.css.map */

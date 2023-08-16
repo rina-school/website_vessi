@@ -5,7 +5,6 @@
 // ヒーロー
 .p-hero {
   background-color: v.$subPrimaryColor;
-  position: relative;
   width: 100%;
 
   &__bg__list__item__img {
@@ -18,8 +17,8 @@
 
   &__text {
     position: absolute;
-    right: 7%;
-    top: 50%;
+    right: 18%;
+    top: calc(50% + v.$pcHeaderHeight / 2);
     transform: translateY(-50%);
 
     &__catchcopy__content.js-animation {
@@ -100,11 +99,11 @@
 
   &__scroll span::before {
     content: "";
-    /*描画位置*/
+    // 描画位置
     position: absolute;
     bottom: f.pixelToRemSize(-6px);
     right: f.pixelToRemSize(-6px);
-    /*矢印の形状*/
+    // 矢印の形状
     width: f.pixelToRemSize(1.5px);
     height: f.pixelToRemSize(20px);
     background: v.$white;
@@ -113,11 +112,11 @@
 
   &__scroll span::after {
     content:"";
-    /*描画位置*/
+    // 描画位置
     position: absolute;
     bottom: f.pixelToRemSize(-6px);
     right: 0;
-    /*矢印の形状*/
+    // 矢印の形状
     width: f.pixelToRemSize(1.5px);
     height: f.pixelToRemSize(50px);
     background:v.$white;
@@ -257,5 +256,18 @@
 
   &__founders__list__item p {
     margin-top: f.pixelToRemSize(16px);
+  }
+}
+
+// 波（ウェーブ）
+.p-wave {
+  background-color: v.$subPrimaryColor;
+  position: relative;
+
+  &__canvas {
+    bottom: 0;
+    left:0;
+    position: absolute;
+    width: 100%;
   }
 }
