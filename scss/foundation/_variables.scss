@@ -2,10 +2,31 @@
 
 // フォントファミリー
 $fontFamily: 'Lora', 'Noto Sans JP', sans-serif;
+$fontFamilyLora: 'Lora', sans-serif;
+
+// フォントサイズ
+$fontSize50: 50px;
+$fontSize40: 40px;
+$fontSize36: 36px;
+$fontSize20: 20px;
+$fontSize16: 16px;
+$fontSize14: 14px;
+$fontSize12: 12px;
+
+// 行間
+$lineHeight72: 72px;
+$lineHeight66: 66px;
+$lineHeight58: 58px;
+$lineHeight52: 52px;
+$lineHeight47: 47px;
+$lineHeight29: 29px;
+$lineHeight28: 28px;
+$lineHeight24: 24px;
+$lineHeight20: 20px;
 
 // サイズ(px値→vw値)計算の基準となるviewport(px値)
-$pcViewPort: 1180;
-$spViewPort: 375;
+$pcViewPort: 1180px;
+$spViewPort: 375px;
 
 // カラーコード
 $primaryColor: #8FC6AB;
@@ -20,18 +41,20 @@ $voiceStarColor: #FDB603;
 $white: #fff;
 
 // ブレークポイント
-$breakPointPc: 768px;
+$breakPointSp: 768px;
 
-// 特定要素の高さ
+// 特定要素の幅・高さ
 $pcHeaderHeight: 70px;
 $spHeaderHeight: 50px;
-$pcSectionPaddingHeight: 120px;
+$pcSectionPaddingHeight: 100px;
 $spSectionPaddingHeight: 64px;
-$pcSectionMarginWidth: 30px;
-$spSectionMarginWidth: 16px;
+$pcSectionPaddingWidth: 30px;
+$spSectionPaddingWidth: 16px;
 
 // z-index
-// $zindexHeader: 1000;
-// $zindexSpBottomBtn: 100;
-// $zindexSpSlickArrowBtn: 10;
-// $zindexCourseDecoration: 1;
+$zindexHamburger: 10000;
+$zindexNav: 5000;
+$zindexHeader: 1000;
+$zindexHeroImg: 10;
+$zindexAboutText: 1;
+$zindexAboutBorder: -1;

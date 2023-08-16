@@ -1,0 +1,194 @@
+@use '../foundation/variables' as v;
+@use '../foundation/mixin' as m;
+@use '../foundation/function' as f;
+
+.l-header {
+  &__hamburger {
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    height: f.pixelToRemSize(50px);
+    justify-content: center;
+    margin-left: f.pixelToRemSize(40px);
+    margin-top: f.pixelToRemSize(10px);
+    position: fixed;
+    width: f.pixelToRemSize(50px);
+    z-index: v.$zindexHamburger;
+
+    & > span, & > span::before {
+      transition: .3s;
+    }
+
+    & > span {
+      background: v.$logoColor;
+      display: block;
+      height: f.pixelToRemSize(2px);
+      margin-bottom: f.pixelToRemSize(6px);
+      position: relative;
+      width: f.pixelToRemSize(30px);
+    }
+
+    & > span::before {
+      background: v.$logoColor;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: f.pixelToRemSize(-10px);
+      width: 100%;
+    }
+
+    & > span::after {
+      color: v.$logoColor;
+      content: 'menu';
+      font: {
+        family: v.$fontFamilyLora;
+        size: f.pixelToRemSize(v.$fontSize14);
+        style: normal;
+      }
+      left: f.pixelToRemSize(-6px);
+      line-height: v.$lineHeight24;
+      position: absolute;
+      top: f.pixelToRemSize(5px);
+    }
+  }
+
+  &__content {
+    align-items: center;
+    background-color: rgba(v.$white, 0.60);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    height: v.$pcHeaderHeight;
+    justify-content: center;
+    left: 0;
+    padding: 0 f.pixelToRemSize(40px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: v.$zindexHeader;
+  }
+
+  &__content__logo {
+    align-items: center;
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    justify-content: center;
+    height: auto;
+    width: auto;
+
+    a {
+      display: inline-block;
+      height: auto;
+      width: auto;
+    }
+
+    img {
+      height: f.pixelToRemSize(50px);
+      width: auto;
+    }
+  }
+
+  &__content__shop {
+    grid-column: 3/4;
+    grid-row: 1/3;
+    position: absolute;
+    right: 0;
+
+    &::after {
+      background-color: v.$logoColor;
+    }
+
+    & > span {
+      color: v.$logoColor;
+    }
+  }
+
+  &__nav {
+    background-color: v.$primaryColor;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translateX(-125%);
+    transition: .3s ease;
+
+    &__list {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: f.pixelToRemSize(40px);
+      margin: calc(f.pixelToRemSize(56px) + v.$pcHeaderHeight) f.pixelToRemSize(40px) 0;
+    }
+
+    &__list__item:first-child {
+      gap: f.pixelToRemSize(56px);
+    }
+
+    &__list__item span {
+      color: v.$logoColor;
+      font-weight: 700;
+    }
+
+    &__list__item__shop {
+      color: v.$logoColor;
+      font-weight: 400;
+      padding: f.pixelToRemSize(16px) f.pixelToRemSize(72px);
+      text-align: center;
+    }
+
+    &__list__item__shop::after {
+      background-color: v.$logoColor;
+    }
+
+    &__list__item__logo {
+      width: auto;
+      height: auto;
+
+      & img {
+        width: f.pixelToRemSize(150px);
+      }
+    }
+
+    &__list__item__title__en {
+      font: {
+        family: v.$fontFamilyLora;
+        size: f.pixelToRemSize(v.$fontSize20);
+        style: normal;
+      }
+      line-height: v.$lineHeight28;
+    }
+  }
+
+  &.js-nav-is-active {
+    .l-header__hamburger {
+      & > span {
+        margin-top: f.pixelToRemSize(0);
+        top: f.pixelToRemSize(-5px);
+        transform: rotate(30deg);
+      }
+  
+      & > span::before {
+        top: f.pixelToRemSize(0px);
+        transform: rotate(-60deg);
+      }
+  
+      & > span::after {
+        content: 'close';
+        left: f.pixelToRemSize(3px);
+        margin-top: f.pixelToRemSize(4px);
+        transform: rotate(-30deg);
+      }
+    }
+
+    .l-header__nav {
+      position: fixed;
+      transform: translateX(0);
+      z-index: v.$zindexNav;
+    }
+  }
+}

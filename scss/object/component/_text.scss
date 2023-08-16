@@ -1,0 +1,39 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+.c-text__capitalize {
+  text-transform: capitalize;
+}
+
+.c-text__uppercase {
+  text-transform: uppercase;
+}
+
+// ショップへ遷移するリンクのテキスト
+.c-text__shoplink {
+  font: {
+    size: f.pixelToRemSize(v.$fontSize20);
+    weight: 400;
+  }
+  line-height: f.pixelToRemSize(v.$lineHeight29);
+
+  &::after {
+    content: '';
+    display: inline-block;
+    height: f.pixelToRemSize(20px);
+    mask-image: url(../img/icon/shopping-cart.svg);
+    mask-size: cover;
+    margin-left: f.pixelToRemSize(8px);
+    vertical-align: middle;
+    width: f.pixelToRemSize(18.8px);
+  }
+
+  &__attention {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize14);
+      weight: 400;
+    }
+    line-height: f.pixelToRemSize(v.$lineHeight24);
+  }
+}

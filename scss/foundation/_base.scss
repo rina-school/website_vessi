@@ -1,0 +1,81 @@
+@use './variables' as v;
+@use './mixin' as m;
+@use './function' as f;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  color: v.$textColor;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: {
+    family: v.$fontFamily;
+    size: f.pixelToRemSize(v.$fontSize16);
+    style: normal;
+    weight: 400;
+  }
+  line-height: v.$lineHeight28;
+  width: 100%;
+
+  @include m.mq {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize14, v.$spViewPort), v.$fontSize16);
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight24, v.$spViewPort), v.$lineHeight28);
+  }
+}
+
+section:not(.p-hero) {
+  padding: v.$pcSectionPaddingHeight 0;
+
+  @include m.mq {
+    padding: clamp(v.$spSectionPaddingHeight, f.pixelToVwSize(v.$spSectionPaddingHeight, v.$spViewPort), v.$pcSectionPaddingHeight) 0;
+  }
+}
+
+section h2 {
+  font: {
+    size: f.pixelToRemSize(v.$fontSize50);
+    style: italic;
+    weight: 700;
+  }
+  line-height: v.$lineHeight66;
+  margin-bottom: f.pixelToRemSize(16);
+
+  @include m.mq {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize36, v.$spViewPort), v.$fontSize50);
+      weight: 700;
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight47, v.$spViewPort), v.$lineHeight66);
+  }
+}
+
+section h3 {
+  font: {
+    size: f.pixelToRemSize(v.$fontSize20);
+    style: normal;
+    weight: 700;
+  }
+  line-height: v.$lineHeight29;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	border: none;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+  list-style: none;
+}

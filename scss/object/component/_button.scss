@@ -1,0 +1,9 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+.c-button {
+  background-color: v.$white;
+  border-radius: f.pixelToRemSize(34px);
+  display: inline-block;
+}

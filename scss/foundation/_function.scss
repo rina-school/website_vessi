@@ -1,1 +1,20 @@
+@use 'sass:math';
 
+// 単位付から単位を除外し数値だけに変更
+@function stripUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+
+  @return $number;
+}
+
+// スマホ用を想定
+@function pixelToVwSize($baseSize, $baseViewPort) {
+  @return math.div(100, stripUnit($baseViewPort)) * stripUnit($baseSize) * 1vw;
+}
+
+// PC用を想定（16はhtmlタグのフォントサイズ=16pxのこと）
+@function pixelToRemSize($size) {
+	@return math.div(stripUnit($size), 16) + rem;
+}

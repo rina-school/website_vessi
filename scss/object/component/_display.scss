@@ -1,0 +1,25 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+.c-section__inner {
+  max-width: 1120px;
+  margin: 0 auto;   // 本来はここに書かないが、固定のため記述
+  padding: 0 30px;  // 本来はここに書かないが、固定のため記述
+}
+
+.c-pc__only {
+  display: initial;
+
+  @include m.mq {
+    display: none;
+  }
+}
+
+.c-sp__only {
+  display: none;
+
+  @include m.mq {
+    display: initial;
+  }
+}

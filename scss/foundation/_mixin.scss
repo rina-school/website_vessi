@@ -1,0 +1,8 @@
+@use './variables' as v;
+
+// ブレイクポイント768px以下
+@mixin mq {
+  @media screen and (max-width: v.$breakPointSp) {
+    @content;
+  }
+}

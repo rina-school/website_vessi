@@ -25,62 +25,64 @@
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./js/plugin/slick-plugin/slick/slick.css">
+  <link rel="stylesheet" href="./js/plugin/slick-plugin/slick/slick-theme.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header class="l-header">
-    <div class="c-header-inner">
-      <div class="l-header__content">
-        <div class="l-header__content__hamburger">
-          <span></span>
-        </div>
-        <h1 class="l-header__content__logo">
-          <a href="#">
-            <img src="./img/logo/VessiLogo-04.svg" alt="vessiのロゴ">
-          </a>
-        </h1>
-        <a href="https://vessi.com/" class="c-capitalize p-link__shop">online shop</a>
-      </div>
+    <div class="l-header__hamburger">
+      <span class="c-text__uppercase"></span>
+    </div>
+    <div class="l-header__content">
+      <h1 class="l-header__content__logo">
+        <a href="#">
+          <img src="./img/logo/VessiLogo-04.svg" alt="vessiのロゴ">
+        </a>
+      </h1>
+      <a href="https://vessi.com/" class="c-text__capitalize c-text__shoplink l-header__content__shop"><span class="c-pc__only">online shop</span></a>
     </div>
     <nav class="l-header__nav">
       <ul class="l-header__nav__list">
         <li class="l-header__nav__list__item">
           <h2 class="l-header__nav__list__item__logo">
-            <img src="./img/logo/VessiLogo-04.svg" alt="vessiのロゴ">
+            <a href="#">
+              <img src="./img/logo/VessiLogo-04.svg" alt="vessiのロゴ">
+            </a>
           </h2>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#about">
-            <span class="l-header__nav__list__item__title__en c-capitalize">about</span><span class="l-header__nav__list__item__title__jp">　- <span class="c-capitalize">vessi</span>について -</span>
+            <span class="l-header__nav__list__item__title__en c-text__capitalize">about</span><span class="l-header__nav__list__item__title__jp">　- <span class="c-text__capitalize">vessi</span>について -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#feature">
-            <span class="l-header__nav__list__item__title__en c-capitalize">feature</span><span class="l-header__nav__list__item__title__jp">　- 特徴 -</span>
+            <span class="l-header__nav__list__item__title__en c-text__capitalize">feature</span><span class="l-header__nav__list__item__title__jp">　- 特徴 -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#product">
-            <span class="l-header__nav__list__item__title__en c-capitalize">product</span><span class="l-header__nav__list__item__title__jp">　- 商品紹介 -</span>
+            <span class="l-header__nav__list__item__title__en c-text__capitalize">product</span><span class="l-header__nav__list__item__title__jp">　- 商品紹介 -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#warranty">
-            <span class="l-header__nav__list__item__title__en c-capitalize">warranty</span><span class="l-header__nav__list__item__title__jp">　- 保証について -</span>
+            <span class="l-header__nav__list__item__title__en c-text__capitalize">warranty</span><span class="l-header__nav__list__item__title__jp">　- 保証について -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#customerVoice">
-            <span class="l-header__nav__list__item__title__en  c-capitalize">customer voice</span><span class="l-header__nav__list__item__title__jp">　- 愛用者の声 -</span>
+            <span class="l-header__nav__list__item__title__en  c-text__capitalize">customer voice</span><span class="l-header__nav__list__item__title__jp">　- 愛用者の声 -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
           <a href="#faq">
-            <span class="l-header__nav__list__item__title__en c-uppercase">faq</span><span class="l-header__nav__list__item__title__jp">　- よくある質問 -</span>
+            <span class="l-header__nav__list__item__title__en c-text__uppercase">faq</span><span class="l-header__nav__list__item__title__jp">　- よくある質問 -</span>
           </a>
         </li>
         <li class="l-header__nav__list__item">
-          <a href="https://vessi.com/" class="c-button c-capitalize p-link__shop">
+          <a href="https://vessi.com/" class="l-header__nav__list__item__shop c-button c-text__capitalize c-text__shoplink">
             online shop
           </a>
         </li>
@@ -89,7 +91,7 @@
   </header>
   <main class="l-main">
     <section class="p-hero">
-      <ul class="p-hero__bg__list">
+      <ul class="p-hero__bg__list js-hero-slick">
         <li class="p-hero__bg__list__item">
           <picture>
             <source srcset="./img/webp/hero/Desktop__Collections_-_Women.webp" type="image/webp">
@@ -115,22 +117,32 @@
           </picture>
         </li>
       </ul>
-      <div class="p-hero__text">
-        <h2>雨の日の外出も<br>足元を快適に</h2>
-        <a href="https://vessi.com/" class="c-button c-capitalize p-link__shop">online shop</a>
-        <p class="p-link__shop__attention">＊英語のサイトですが、日本語翻訳に対応しています。</p>
+      <div class="c-section__inner p-hero__text">
+        <div class="p-hero__text__catchcopy">
+          <h2 class="p-hero__text__catchcopy__content">
+            雨の日の外出も<br>足元を快適に
+          </h2>
+        </div>
+        <div class="p-hero__text__shoplink">
+          <a href="https://vessi.com/" class="c-button c-text__capitalize c-text__shoplink">online shop</a>
+          <p class="c-text__shoplink__attention">＊英語のサイトですが、日本語翻訳に対応しています。</p>
+        </div>
       </div>
-      <div class="c-capitalize p-hero__scroll">
+      <div class="c-text__capitalize p-hero__scroll">
         <span>scroll</span>
       </div>
-      <div class="p-hero__curved"></div>
     </section>
     <section id="about" class="p-about">
       <div class="c-section__inner">
         <div class="p-about__message">
-          <p class="p-about__message__title__sub"><span class="c-pc__only">雨の多い都市バンクーバー・</span>カナダ発</p>
-          <h2 class="p-about__message__title__main"></h2>
-          <p class="p-about__message__title__sub"></p>
+          <p class="p-about__message__title__sub__birthplace">
+            <span class="c-pc__only">雨の多い都市バンクーバー・</span>カナダ発
+          </p>
+          <h2 class="p-about__message__title__main">
+            毎日どこでも履ける、まるで魔法のような<br/>
+            <span class="p-about__message__title__main__border">100%防水ニットスニーカー！</span>
+          </h2>
+          <p class="p-about__message__title__sub__keywords">- 雨・雪・ぬかるみ・泥・日常 -</p>
           <p class="p-about__message__text">
             用途に合わせて靴をあれこれ用意する時代は終わりです。<br/>
             スニーカー１つで全ての用途に対応するなんて不可能？<br/>
@@ -150,26 +162,26 @@
           </p>
         </div>
         <div class="p-about__founders">
-          <h2 class="p-about__founders__title"><span class="c-capitalize">vessi</span>の創設者</h2>
-          <ul class="p-about__founders_list">
-            <li>
+          <h3 class="p-about__founders__title"><span class="c-text__capitalize">vessi</span>の創設者</h3>
+          <ul class="p-about__founders__list">
+            <li class="p-about__founders__list__item">
               <picture>
                 <source srcset="./img/webp/founders/Founders_Andy2.webp" type="image/webp">
-                <img src="./img/photo/founders/Founders_Andy2.jpg" alt="アンディの写真">
+                <img class="p-about__founders__andy" src="./img/photo/founders/Founders_Andy2.jpg" alt="アンディの写真">
               </picture>
               <p>アンディ</p>
             </li>
-            <li>
+            <li class="p-about__founders__list__item">
               <picture>
                 <source srcset="./img/webp/founders/Founders_Tony.webp" type="image/webp">
-                <img src="./img/photo/founders/Founders_Tony.jpg" alt="トニーの写真">
+                <img class="p-about__founders__tony" src="./img/photo/founders/Founders_Tony.jpg" alt="トニーの写真">
               </picture>
               <p>トニー</p>
             </li>
-            <li>
+            <li class="p-about__founders__list__item">
               <picture>
                 <source srcset="./img/webp/founders/Founders_Mikaella2.webp" type="image/webp">
-                <img src="./img/photo/founders/Founders_Mikaella2.jpg" alt="ミカエラの写真">
+                <img class="p-about__founders__mikaella" src="./img/photo/founders/Founders_Mikaella2.jpg" alt="ミカエラの写真">
               </picture>
               <p>ミカエラ</p>
             </li>
@@ -188,7 +200,7 @@
             </picture>
           </div>
           <div class="p-feature__content__text">
-            <h2 class="c-section__title c-capitalize">feature</h2>
+            <h2 class="c-section__title c-text__capitalize">feature</h2>
             <p class="c-section__sub">
               100％防水で通気性のあるニットスニーカーは、突然の土砂降りに見舞われる可能性がある混天候の休暇に最適です。
             </p>
@@ -200,7 +212,7 @@
                 <div class="p-feature__content__text__item__list__text">
                   <h3>100%防水</h3>
                   <p>
-                    防水機能はコーティングによるものではありません。当社の<span class="c-capitalize">dyma</span>-tex&reg; テクノロジーで開発したニット素材により、水の浸入を防ぎ通気性を保ちます。雪やぬかるみ、泥もへっちゃらです。<br/>
+                    防水機能はコーティングによるものではありません。当社の<span class="c-text__capitalize">dyma</span>-tex&reg; テクノロジーで開発したニット素材により、水の浸入を防ぎ通気性を保ちます。雪やぬかるみ、泥もへっちゃらです。<br/>
                     素材に穴を開けない限り靴の寿命まで100%防水が継続します。
                   </p>
                 </div>
@@ -212,7 +224,7 @@
                 <div class="p-feature__content__text__item__list__text">
                   <h3>雲のような快適さ</h3>
                   <p>
-                    防水性だけではありません。雲の上を歩くような心地よさも魅力。当社の<span class="c-capitalize">dyma</span>-tex&reg; テクノロジーは、風雨の侵入を防ぎながら、足からの熱と湿気を逃がします。この機能により、天候や気温に関係なく、一年中快適な靴になります。靴を脱ぎたくなくなるかもしれません。
+                    防水性だけではありません。雲の上を歩くような心地よさも魅力。当社の<span class="c-text__capitalize">dyma</span>-tex&reg; テクノロジーは、風雨の侵入を防ぎながら、足からの熱と湿気を逃がします。この機能により、天候や気温に関係なく、一年中快適な靴になります。靴を脱ぎたくなくなるかもしれません。
                   </p>
                 </div>
               </li>
@@ -224,7 +236,7 @@
                   <h3>軽量</h3>
                   <p>
                     不格好なレインブーツに別れを告げましょう。<br/>
-                    <span class="c-capitalize">vessi</span> は非常に軽量なので、履いていることを忘れてしまうほどです。ラインナップにある <span class="c-capitalize">cityscape</span> スニーカーの重さはわずか 約189gです。
+                    <span class="c-text__capitalize">vessi</span> は非常に軽量なので、履いていることを忘れてしまうほどです。ラインナップにある <span class="c-text__capitalize">cityscape</span> スニーカーの重さはわずか 約189gです。
                   </p>
                 </div>
               </li>
@@ -246,9 +258,9 @@
     </section>
     <section id="product" class="p-product">
       <div class="c-section__inner">
-        <h2 class="c-section__title c-capitalize">product</h2>
+        <h2 class="c-section__title c-text__capitalize">product</h2>
         <p class="c-section__sub">
-          旅行中、通勤中、または犬の散歩中など、<span class="c-capitalize">vessi</span> はあらゆる場面に最適な快適な防水シューズを提供します。<br/>
+          旅行中、通勤中、または犬の散歩中など、<span class="c-text__capitalize">vessi</span> はあらゆる場面に最適な快適な防水シューズを提供します。<br/>
           見苦しいレインブーツを、見た目も履き心地も素晴らしく、天候に合わせて足を完全に保護してくれる普段使いのニットスニーカーに替えましょう。カラーバリエーションも豊富です。
         </p>
         <div class="p-product__content">
@@ -258,108 +270,108 @@
                 <img src="./img/photo/product/CityscapeClassic.avif" alt="Cityscape Classic">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">cityscape classic</h3>
+                <h3 class="c-text__capitalize">cityscape classic</h3>
                 <p>
-                  仕事から遊びまで気楽に使えるクラシックなアスレチックシューズです。軽量（なんと189g！）でスタイリッシュなルックスの <span class="c-capitalize">cityscape</span> は<span class="c-capitalize">vessi</span> の定番シューズです。
+                  仕事から遊びまで気楽に使えるクラシックなアスレチックシューズです。軽量（なんと189g！）でスタイリッシュなルックスの <span class="c-text__capitalize">cityscape</span> は<span class="c-text__capitalize">vessi</span> の定番シューズです。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-cityscape-classic-charcoal-grey" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-cityscape-classic-charcoal-grey" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/EverydayClassics.avif" alt="Everyday Classics">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">everyday classics</h3>
+                <h3 class="c-text__capitalize">everyday classics</h3>
                 <p>
-                  アーチサポートと厚いソールを備えた <span class="c-capitalize">everyday athletic</span>シューズは、まる一日の遊びのために頼りになるものです。どの遊びを100回しても快適に過ごせます。日常生活にも適しています。
+                  アーチサポートと厚いソールを備えた <span class="c-text__capitalize">everyday athletic</span>シューズは、まる一日の遊びのために頼りになるものです。どの遊びを100回しても快適に過ごせます。日常生活にも適しています。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-everyday-classic-mist-grey" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-everyday-classic-mist-grey" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/Weekend.avif" alt="Weekend Sneaker">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">weekend sneaker</h3>
+                <h3 class="c-text__capitalize">weekend sneaker</h3>
                 <p>
                   コート・スニーカーとして生まれ変わった私たちのスニーカーは、オフィス〜週末のアクティビティにも最適なシューズで、比類のない履き心地とリラックスしたシルエットを兼ね備え、簡単に履くことができます。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-weekend-marble-white" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-weekend-marble-white" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/EverydayMove.avif" alt="Everyday Move">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">everyday move</h3>
+                <h3 class="c-text__capitalize">everyday move</h3>
                 <p>
                   アスレチックからインスピレーションを得たスタイルは、どんな天候でも毎日の動きに適したサポートと通気性を完璧に融合させています。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-everyday-move-onyx-black" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-everyday-move-onyx-black" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/EverydayMoveSlip-On.avif" alt="Everyday Move Slip-On">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">everyday move slip-On</h3>
+                <h3 class="c-text__capitalize">everyday move slip-On</h3>
                 <p>
-                  ジョギングやウォーキング、試合に飛び入り参加するという予測不可能なライフスタイルを送る人にとって、<span class="c-capitalize">everyday move slip-Ons</span>は靴ひもを結ぶのに余分な時間を必要とせず、手袋のようにフィットします。
+                  ジョギングやウォーキング、試合に飛び入り参加するという予測不可能なライフスタイルを送る人にとって、<span class="c-text__capitalize">everyday move slip-Ons</span>は靴ひもを結ぶのに余分な時間を必要とせず、手袋のようにフィットします。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-everyday-move-slip-ons-polar-white" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-everyday-move-slip-ons-polar-white" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/Stormburst.avif" alt="Stormburst">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">stormburst</h3>
+                <h3 class="c-text__capitalize">stormburst</h3>
                 <p>
-                  最も冒険に適したデザインの<span class="c-capitalize">stormburst</span>シューズは、スニーカーの快適さとアウトドアブーツのグリップ力とカバー力を兼ね備えています。
+                  最も冒険に適したデザインの<span class="c-text__capitalize">stormburst</span>シューズは、スニーカーの快適さとアウトドアブーツのグリップ力とカバー力を兼ね備えています。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-stormburst-frost-white" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-stormburst-frost-white" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/Boardwalk.avif" alt="Boardwalk Slip-On">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">boardwalk slip-On</h3>
+                <h3 class="c-text__capitalize">boardwalk slip-On</h3>
                 <p>
                   クラシックなシルエットを新たに取り入れたこのシューズには、滑りにくく跡がつきにくいアウトソールと軽量で防水性のニットが採用されており、陸上でも水上でも生活に最適です。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-boardwalk-slip-on-coastal-blue" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-boardwalk-slip-on-coastal-blue" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/WeekendChelsea.avif" alt="Weekend Chelsea">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">weekend chelsea</h3>
+                <h3 class="c-text__capitalize">weekend chelsea</h3>
                 <p>
                   寒い季節の定番アイテムであるチェルシーブーツは、スニーカーの快適さとブーツのカバー力と暖かさを兼ね備えています。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-weekend-chelsea-shiitake-brown" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-weekend-chelsea-shiitake-brown" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
                 <img src="./img/photo/product/SundaySlipper.avif" alt="Sunday Slipper">
               </div>
               <div class="p-product__card__text">
-                <h3 class="c-capitalize">sunday slipper</h3>
+                <h3 class="c-text__capitalize">sunday slipper</h3>
                 <p>
                   寒い季節の定番アイテムであるチェルシーブーツは、スニーカーの快適さとブーツのカバー力と暖かさを兼ね備えています。
                 </p>
               </div>
-              <a href="https://vessi.com/products/mens-sunday-slippers-granite-black" class="c-button c-capitalize p-link__shop">buy</a>
+              <a href="https://vessi.com/products/mens-sunday-slippers-granite-black" class="c-button c-text__capitalize c-text__shoplink">buy</a>
             </li>
             <li class="p-product__content__list__item">
               <div class="p-product__card__img">
@@ -369,7 +381,7 @@
                 <div class="p-product__card__text">
                   <h3>防水ニットで作られた靴下、帽子、手袋もご一緒にいかがですか？</h3>
                 </div>
-                <a href="https://vessi.com/collections/accessories" class="c-button c-capitalize p-link__shop">accessories</a>
+                <a href="https://vessi.com/collections/accessories" class="c-button c-text__capitalize c-text__shoplink">accessories</a>
               </div>
             </li>
           </ul>
@@ -378,35 +390,35 @@
               <div class="p-product__category__list__item__img">
                 <picture>
                   <source srcset="./img/webp/Weekend_OakBrown1.webp" type="image/webp">
-                  <img class="p-hero__bg__list__item__img" src="img/photo/Weekend_OakBrown1.jpg" alt="防水スニーカーを履いた女性">
+                  <img class="p-product__category__list__item__img" src="img/photo/Weekend_OakBrown1.jpg" alt="防水スニーカーを履いた女性">
                 </picture>
               </div>
-              <a href="https://vessi.com/collections/women" class="c-button c-capitalize p-link__shop">women</a>
+              <a href="https://vessi.com/collections/women" class="c-button c-text__capitalize c-text__shoplink">women</a>
             </li>
             <li class="p-product__category__list__item">
               <div class="p-product__category__list__item__img">
                 <picture>
                   <source srcset="./img/webp/stormblack1.webp" type="image/webp">
-                  <img class="p-hero__bg__list__item__img" src="img/photo/stormblack1.jpg" alt="防水スニーカーを履いた男性">
+                  <img class="p-product__category__list__item__img" src="img/photo/stormblack1.jpg" alt="防水スニーカーを履いた男性">
                 </picture>
               </div>
-              <a href="https://vessi.com/collections/men" class="c-button c-capitalize p-link__shop">men</a>
+              <a href="https://vessi.com/collections/men" class="c-button c-text__capitalize c-text__shoplink">men</a>
             </li>
             <li class="p-product__category__list__item">
               <div class="p-product__category__list__item__img">
                 <picture>
                   <source srcset="./img/webp/ALI07735.webp" type="image/webp">
-                  <img class="p-hero__bg__list__item__img" src="img/photo/ALI07735.jpg" alt="防水スニーカーを履いた子ども">
+                  <img class="p-product__category__list__item__img" src="img/photo/ALI07735.jpg" alt="防水スニーカーを履いた子ども">
                 </picture>
               </div>
-              <a href="https://vessi.com/collections/kids" class="c-button c-capitalize p-link__shop">kids</a>
+              <a href="https://vessi.com/collections/kids" class="c-button c-text__capitalize c-text__shoplink">kids</a>
             </li>
           </ul>
-          <p class="p-link__shop__attention">
+          <p class="c-text__shoplink__attention">
             ＊オンラインストアは英語のサイトですが、日本語翻訳に対応しています。
           </p>
-          <p class="p-link__shop__attention">
-            ＊上記オンラインショップ(vessi.com)以外の<span class="c-capitalize">vessi</span>を名乗るサイトは全て詐欺サイトですのでご注意ください。
+          <p class="c-text__shoplink__attention">
+            ＊上記オンラインショップ(vessi.com)以外の<span class="c-text__capitalize">vessi</span>を名乗るサイトは全て詐欺サイトですのでご注意ください。
           </p>
         </div>
       </div>
@@ -421,7 +433,7 @@
             </picture>
           </div>
           <div class="p-warranty__content__text">
-            <h2 class="c-section__title c-capitalize">warranty</h2>
+            <h2 class="c-section__title c-text__capitalize">warranty</h2>
             <p class="c-section__sub">
               保証について心配ですか？詳しく見てみましょう。
             </p>
@@ -433,8 +445,8 @@
                 <div class="p-warranty__content__text__item__list__text">
                   <h3>80ドル以上のご注文で通常配送無料</h3>
                   <p>
-                    国際発送が不安ですか？80ドル以上のオーダー＋通常配送は<span class="c-capitalize">vessi</span>持ちです。<br/>
-                    ※通関に必要な手数料については「<span class="c-uppercase">faq</span>」でご確認ください。
+                    国際発送が不安ですか？80ドル以上のオーダー＋通常配送は<span class="c-text__capitalize">vessi</span>持ちです。<br/>
+                    ※通関に必要な手数料については「<span class="c-text__uppercase">faq</span>」でご確認ください。
                   </p>
                 </div>
               </li>
@@ -447,7 +459,7 @@
                   <p>
                     お届け日から90日以内なら交換対応できます。<br/>
                     サイズが何か違うと感じたら。。。メールでご連絡いただければ、無償（＊日本からは送料のみ自己負担）で交換の手続きをさせていただきます。<br/>
-                    ※詳しくは「<span class="c-uppercase">faq</span>」でご確認ください。
+                    ※詳しくは「<span class="c-text__uppercase">faq</span>」でご確認ください。
                   </p>
                 </div>
               </li>
@@ -459,7 +471,7 @@
                   <h3>ドライソックス保証</h3>
                   <p>
                     私たちは品質を重視します。メーカーの欠陥に対して365日間の保証があります。<br/>
-                    ※当社の保証ポリシーを「<span class="c-uppercase">faq</span>」でご確認ください。
+                    ※当社の保証ポリシーを「<span class="c-text__uppercase">faq</span>」でご確認ください。
                   </p>
                 </div>
               </li>
@@ -471,7 +483,7 @@
     <div class="p-eyecatch__fixed p-background__voice"></div>
     <section id="customerVoice" class="p-customervoice">
       <div class="c-section__inner">
-        <h2 class="c-section__title c-capitalize">customer voice</h2>
+        <h2 class="c-section__title c-text__capitalize">customer voice</h2>
         <p class="c-section__sub">海外の愛用者の声をご紹介します。</p>
         <div class="p-customervoice__content">
           <div class="p-customervoice__content__comment">
@@ -499,7 +511,7 @@
               <br/>
               私は今は入手できない色（抹茶グリーン）を注文しましたが、通常は限定されたいくつかの色（ブルーを含む）しかないことに残念に思いました。 （売り切れの場合は、購入したい人が増えるかもしれません）。<br/>
               <br/>
-              私は今まで履いたどの靴でも W10 ですが、<span class="c-capitalize">vessi</span>に限ってはW9 が私に最もフィットします。
+              私は今まで履いたどの靴でも W10 ですが、<span class="c-text__capitalize">vessi</span>に限ってはW9 が私に最もフィットします。
             </p>
             <p class="p-customervoice__content__author">- エイリーンM -</p>
             <p class="p-customervoice__content__en">原文を表示</p>
@@ -518,7 +530,7 @@
     <div class="p-eyecatch__fixed p-background__faq"></div>
     <section id="faq" class="p-faq">
       <div class="c-section__inner">
-        <h2 class="c-section__title c-uppercase">faq</h2>
+        <h2 class="c-section__title c-text__uppercase">faq</h2>
         <p class="c-section__sub">よくある質問をまとめました。</p>
         <dl class="p-faq__list">
           <div class="p-faq__list__item">
@@ -534,19 +546,19 @@
           </div>
           <div class="p-faq__list__item">
             <dt class="p-faq__list__item__question">
-              <span class="c-capitalize">vessi</span> はハーフサイズも作っていますか？
+              <span class="c-text__capitalize">vessi</span> はハーフサイズも作っていますか？
             </dt>
             <dd class="p-faq__list__item__answer">
-              <span class="c-capitalize">vessi</span> の靴はホールサイズのみとなります。柔軟で体にぴったりフィットするニットは、サイズが中間であっても足にぴったりとフィットし、パーソナライズされたフィット感を実現します。<br/>
-              ハーフサイズの場合は、最も一般的な <span class="c-uppercase">us</span> サイズ全体を選択することをお勧めします。
+              <span class="c-text__capitalize">vessi</span> の靴はホールサイズのみとなります。柔軟で体にぴったりフィットするニットは、サイズが中間であっても足にぴったりとフィットし、パーソナライズされたフィット感を実現します。<br/>
+              ハーフサイズの場合は、最も一般的な <span class="c-text__uppercase">us</span> サイズ全体を選択することをお勧めします。
             </dd>
           </div>
           <div class="p-faq__list__item">
             <dt class="p-faq__list__item__question">
-              <span class="c-capitalize">vessi</span> の靴は滑りにくいですか?
+              <span class="c-text__capitalize">vessi</span> の靴は滑りにくいですか?
             </dt>
             <dd class="p-faq__list__item__answer">
-              <span class="c-capitalize">vessi</span> の靴は滑り止めの認定はありません。とはいえ、当社のすべての靴には、トラクションを高めるためにトレッドにゴム製のヘリンボーンパターンを使用してデザインされています。安全に探索してください！
+              <span class="c-text__capitalize">vessi</span> の靴は滑り止めの認定はありません。とはいえ、当社のすべての靴には、トラクションを高めるためにトレッドにゴム製のヘリンボーンパターンを使用してデザインされています。安全に探索してください！
             </dd>
           </div>
           <div class="p-faq__list__item">
@@ -564,7 +576,7 @@
               返品および交換ポリシーは何ですか?
             </dt>
             <dd class="p-faq__list__item__answer">
-              あなたの<span class="c-capitalize">vessi</span> は期待通りの効果がありませんでしたか？問題ない！お届け日から90日以内であれば返品を承ります。<br/>
+              あなたの<span class="c-text__capitalize">vessi</span> は期待通りの効果がありませんでしたか？問題ない！お届け日から90日以内であれば返品を承ります。<br/>
               返品/交換をスムーズに行う方法は次のとおりです。<br/>
               <br/>
               ・靴は元の箱に入っていて、未使用かつ、加工されておらず、損傷していない必要があります。<br/>
@@ -576,7 +588,7 @@
               <br/>
               詳細および返品または交換の手続きを開始するには、<a href="https://vessi.com/pages/returnsandexchanges">こちら</a>をクリックしてください。<br/>
               <br/>
-              注: このポリシーは、vessi.com での購入にのみ適用されます。他の小売店から購入した <span class="c-capitalize">vessi</span> 製品を返品したい場合は、その小売店に直接お問い合わせください。
+              注: このポリシーは、vessi.com での購入にのみ適用されます。他の小売店から購入した <span class="c-text__capitalize">vessi</span> 製品を返品したい場合は、その小売店に直接お問い合わせください。
             </dd>
           </div>
           <div class="p-faq__list__item">
@@ -584,15 +596,15 @@
               保証ポリシーは何ですか?
             </dt>
             <dd class="p-faq__list__item__answer">
-              私たちはあなたと<span class="c-capitalize">vessi</span> が永遠に一緒にいることを望んでいます。だからこそ、私たちは品質と約束を守ります。すべての<span class="c-capitalize">vessi</span> には、メーカーの欠陥に対して 365日間の保証が付いています。<br/>
-              <span class="c-capitalize">vessi</span> を改造したり、強力な化学薬品にさらしたりすることによって発生した問題、または過度の磨耗によって欠陥が発生した場合には、弊社は補償できないことには注意してください。<br/>
-              そうは言っても、あなたの<span class="c-capitalize">vessi</span> の様子がおかしいと思われる場合は、遠慮せずに連絡してお知らせください。喜んでご連絡させていただき、お客様のために何ができるかを確認させていただきます。<br/>
+              私たちはあなたと<span class="c-text__capitalize">vessi</span> が永遠に一緒にいることを望んでいます。だからこそ、私たちは品質と約束を守ります。すべての<span class="c-text__capitalize">vessi</span> には、メーカーの欠陥に対して 365日間の保証が付いています。<br/>
+              <span class="c-text__capitalize">vessi</span> を改造したり、強力な化学薬品にさらしたりすることによって発生した問題、または過度の磨耗によって欠陥が発生した場合には、弊社は補償できないことには注意してください。<br/>
+              そうは言っても、あなたの<span class="c-text__capitalize">vessi</span> の様子がおかしいと思われる場合は、遠慮せずに連絡してお知らせください。喜んでご連絡させていただき、お客様のために何ができるかを確認させていただきます。<br/>
               <br/>
               保証請求を開始するには、まず<a href="https://form.typeform.com/to/pIGnP6TC">このフォーム</a>に記入してください。<br/>
               <br/>
               記入済みのフォームが当社に到着してから処理されるまで、最大 14 日ほどお待ちください。<br/>
               <br/>
-              注: <span class="c-capitalize">vessi</span> は保証ポリシーの要件を満たさないクレームを拒否する権利を留保します。
+              注: <span class="c-text__capitalize">vessi</span> は保証ポリシーの要件を満たさないクレームを拒否する権利を留保します。
             </dd>
           </div>
           <p class="p-faq__other">その他の質問は
@@ -604,9 +616,9 @@
     <section class="p-promotion">
       <div class="c-section__inner">
         <h2>今なら新規会員登録かつ80ドル以上（手数料、送料除く）のご購入でギフトをプレゼント！</h2>
-        <a href="https://vessi.com/" class="c-button c-capitalize p-link__shop ">online shop</a>
-        <p class="p-link__shop__attention">＊英語のサイトですが、日本語翻訳に対応しています。</p>
-        <p class="p-link__shop__attention">＊上記オンラインショップ(vessi.com)以外の<span class="c-capitalize">vessi</span>を名乗るサイトは全て詐欺サイトですのでご注意ください。</p>
+        <a href="https://vessi.com/" class="c-button c-text__capitalize c-text__shoplink ">online shop</a>
+        <p class="c-text__shoplink__attention">＊英語のサイトですが、日本語翻訳に対応しています。</p>
+        <p class="c-text__shoplink__attention">＊上記オンラインショップ(vessi.com)以外の<span class="c-text__capitalize">vessi</span>を名乗るサイトは全て詐欺サイトですのでご注意ください。</p>
       </div>
     </section>
   </main>
@@ -627,10 +639,14 @@
               <a href="https://vessi.com/pages/privacy-policy">プライバシーポリシー</a>
             </li>
           </ul>
-          <p><small>&copy; 2023 <span class="c-capitalize">vessi footwear ltd. all rights reserved.</span></small></p>
+          <p><small>&copy; 2023 <span class="c-text__capitalize">vessi footwear ltd. all rights reserved.</span></small></p>
         </div>
       </div>
     </div>
   </footer>
+
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/plugin/slick-plugin/slick/slick.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
