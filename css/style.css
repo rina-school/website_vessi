@@ -167,7 +167,7 @@ li {
   color: #005864;
 }
 .l-header__nav {
-  background-color: #8FC6AB;
+  background-color: #CDE0DD;
   height: 100vh;
   left: 0;
   position: absolute;
@@ -511,17 +511,6 @@ li {
 }
 .p-about__founders__list__item p {
   margin-top: 1rem;
-}
-
-.p-wave {
-  background-color: #CDE0DD;
-  position: relative;
-}
-.p-wave__canvas {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
 }
 
 /* Utility ------------ *//*# sourceMappingURL=style.css.map */

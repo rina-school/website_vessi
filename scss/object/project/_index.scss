@@ -258,16 +258,3 @@
     margin-top: f.pixelToRemSize(16px);
   }
 }
-
-// 波（ウェーブ）
-.p-wave {
-  background-color: v.$subPrimaryColor;
-  position: relative;
-
-  &__canvas {
-    bottom: 0;
-    left:0;
-    position: absolute;
-    width: 100%;
-  }
-}
