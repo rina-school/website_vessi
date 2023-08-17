@@ -270,7 +270,7 @@
   &__shape__fill {
     background: url(../img/icon/waves.svg) repeat-x;
     background-size: v.$waveWidth auto;
-    animation: waveBg 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    animation: waveBg 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
     bottom: 0;
     height: 100%;
     position: absolute;
@@ -292,7 +292,7 @@
 .p-feature {
   &__content {
     display: flex;
-    gap: min(8.04%, f.pixelToRemSize(90px));
+    gap: min(8.04vw, f.pixelToRemSize(90px));
     justify-content: center;
   }
 
@@ -313,7 +313,7 @@
     flex: 1;
   }
 
-  &__content__text h2 {
+  &__title {
     text-align: left;
   }
 
@@ -337,8 +337,8 @@
   &__content__text__item__list__img {
     flex: 1;
     height: auto;
-    width: 6.25%;
     max-width: f.pixelToRemSize(70px);
+    width: 6.25vw;
   }
 
   &__content__text__item__list__img img {
@@ -355,8 +355,7 @@
   }
 }
 
-
-
+// 商品（Product） 
 
 
 // 保証（Warranty）
@@ -364,7 +363,7 @@
   &__content {
     display: flex;
     flex-direction: row-reverse;
-    gap: min(8.04%, f.pixelToRemSize(90px));
+    gap: min(8.04vw, f.pixelToRemSize(90px));
     justify-content: center;
   }
 
@@ -385,7 +384,7 @@
     flex: 1;
   }
 
-  &__content__text h2 {
+  &__title {
     text-align: left;
   }
 
@@ -409,8 +408,8 @@
   &__content__text__item__list__img {
     flex: 1;
     height: auto;
-    width: 6.25%;
     max-width: f.pixelToRemSize(70px);
+    width: 6.25vw;
   }
 
   &__content__text__item__list__img img {
@@ -424,5 +423,78 @@
 
   &__content__text__item__list__text h3 {
     margin-bottom: f.pixelToRemSize(16px);
+  }
+}
+
+// アイキャッチ（Voice用）
+.p-eyecatch__fixed {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 44.64vw;
+  margin-top: f.pixelToRemSize(100px);
+  max-height: f.pixelToRemSize(530px);
+  width: 100%;
+
+  &__background__voice {
+    background-image: url(../img/photo/Weekend_MarbleWhite6.jpg);
+    background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
+  }
+}
+
+// お客様の声（Customer Voice）
+
+
+// アイキャッチ（FAQ用）
+.p-eyecatch__background__faq {
+  background-image: url(../img/photo/Weekend_MarbleWhite5.jpg);
+  background-image: url(../img/webp/Weekend_MarbleWhite5.webp);
+  background-position: center;
+  background-size: cover;
+  height: 44.64vw;
+  margin-top: f.pixelToRemSize(100px);
+  max-height: f.pixelToRemSize(530px);
+  width: 100%;
+}
+
+// FAQ
+.p-faq {
+  &__title {
+    text-align: center;
+  }
+
+  &__content__text__subtitle {
+    margin-bottom: f.pixelToRemSize(56px);
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__list__item {
+    width: 100%;
+    margin-bottom: f.pixelToRemSize(48px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list__item__question {
+    background: v.$subPrimaryColor;
+    border-radius: f.pixelToRemSize(16px);
+    padding: f.pixelToRemSize(16px) f.pixelToRemSize(24px);
+  }
+
+  &__list__item__answer {
+    margin: f.pixelToRemSize(16px) f.pixelToRemSize(24px) 0;
+  }
+
+  &__other {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize20);
+    }
+    line-height: v.$lineHeight29;
+    text-align: center;
   }
 }
