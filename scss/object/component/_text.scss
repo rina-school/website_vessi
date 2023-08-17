@@ -10,6 +10,18 @@
   text-transform: uppercase;
 }
 
+.c-text__section__title {
+  color: v.$primaryColor;
+}
+
+.c-text__section__subtitle {
+  font: {
+    size: f.pixelToRemSize(v.$fontSize20);
+    weight: 700;
+  }
+  line-height: f.pixelToRemSize(v.$lineHeight29);
+}
+
 // ショップへ遷移するリンクのテキスト
 .c-text__shoplink {
   font: {

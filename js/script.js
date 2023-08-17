@@ -21,9 +21,35 @@ $(document).ready(function () {
     }
   };
 
+  // スクロールした場合の処理
+  $(window).on('scroll', () => {
+    let windowHeight = window.innerHeight;
+    let scrollTop = $(window).scrollTop();
+    
+    // cssのアニメーション処理
+    $('.p-wave__shape__fill').each(function () {
+      let position = $(this).offset().top;
+      if (scrollTop > position - windowHeight) {
+        $(this).addClass('js-animetion-scroll');
+      }
+    });
+  });
+
   $(window).on('load resize', () => {
     let windowHeight = window.innerHeight;
     let scrollTop = $(window).scrollTop();
+
+    // スクロールした場合の処理
+    $(window).on('scroll', () => {
+
+      // cssのアニメーション処理
+      $('.p-wave__shape__fill').each(function () {
+        let position = $(this).offset().top;
+        if (scrollTop > position - windowHeight) {
+          $(this).addClass('js-animetion-scroll');
+        }
+      });
+    });
 
     // cssのアニメーション処理（スクロールなし）
     $('.p-hero__text__catchcopy__content, .p-hero__scroll').each(function () {
@@ -42,7 +68,7 @@ $(document).ready(function () {
         $header.removeClass('js-nav-is-active');
       }))
 
-        e.stopPropagation();
+      e.stopPropagation();
     });
 
     // ページ内リンクについての処理
