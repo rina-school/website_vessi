@@ -7,6 +7,7 @@ $(document).ready(function () {
   const $heroSlick = $('.js-hero-slick');
   const $heroImg = $('.p-hero__bg__list__item__img');
   const $anchorLink = $('a[href^="#"]');
+  const $faqListItem = $('.p-faq__list__item');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -43,7 +44,7 @@ $(document).ready(function () {
     $(window).on('scroll', () => {
 
       // cssのアニメーション処理
-      $('.p-wave__shape__fill').each(function () {
+      $('.p-wave__shape__fill').each(function() {
         let position = $(this).offset().top;
         if (scrollTop > position - windowHeight) {
           $(this).addClass('js-animetion-scroll');
@@ -61,7 +62,7 @@ $(document).ready(function () {
     // ハンバーガーメニューのクリック時処理
     $navBtn.off('click');
     $navBtn.on('click', e => {
-      $header.toggleClass('js-nav-is-active');
+    $header.toggleClass('js-nav-is-active');
 
       // ヘッダーロゴがクリックされればハンバーガーメニューは閉じる
       if ($('.logo').on('click', e => {
@@ -130,7 +131,7 @@ $(document).ready(function () {
       $heroSlick.on('touchmove', function(event, slick, currentSlide, nextSlide){
         $heroSlick.slick('slickPlay');
       });
-    })
+    });
 
     // スマホ、タブレットでメインビジュアルの高さを「viewportの高さいっぱい-headerの高さ」にする
     if ((navigator.userAgent.match(/iPhone|iPad|Android.+Mobile|Macintosh/) && 'ontouchend' in document) || (navigator.userAgentData && navigator.userAgentData.mobile)) {
@@ -138,5 +139,18 @@ $(document).ready(function () {
       $heroImg.height(windowHeight - headerHeight);
     }
 
+    // FAQの開閉
+    // 769px以上（PC用）の場合
+    if (window.innerWidth > 768) {
+      if ($faqListItem.hasClass('js-faq-is-not-active')) {
+        $(this).removeClass('js-faq-is-not-active');
+      }
+    }
+    $faqListItem.off('click');
+    $faqListItem.on('click', function(e) {
+      $(this).toggleClass('js-faq-is-not-active');
+      $(this).children('dd').slideToggle();
+      e.stopPropagation();
+    });
   });
 })

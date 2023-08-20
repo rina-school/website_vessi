@@ -25,7 +25,8 @@ $lineHeight24: 24px;
 $lineHeight20: 20px;
 
 // サイズ(px値→vw値)計算の基準となるviewport(px値)
-$pcViewPort: 1180px;
+$pcViewPort: 1120px;
+$tbViewPort: 768px;
 $spViewPort: 375px;
 
 // カラーコード
@@ -37,7 +38,7 @@ $subPrimaryColor: #CDE0DD;
 $subPrimaryColor2: #F6F9F8;
 $logoColor: #005864;
 $textColor: #2C2C2C;
-$voiceStarColor: #FDB603;
+$reviewsStarColor: #FDB603;
 $white: #fff;
 
 // ブレークポイント
@@ -50,7 +51,7 @@ $pcSectionPaddingHeight: 100px;
 $spSectionPaddingHeight: 64px;
 $pcSectionPaddingWidth: 30px;
 $spSectionPaddingWidth: 16px;
-$waveWidth: 1200px;
+$waveWidth: 1280px;
 
 // z-index
 $zindexHamburger: 10000;

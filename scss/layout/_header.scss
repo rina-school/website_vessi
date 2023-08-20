@@ -9,12 +9,12 @@
     border: none;
     cursor: pointer;
     display: flex;
-    height: f.pixelToRemSize(50px);
+    height: 50px;
     justify-content: center;
-    margin-left: f.pixelToRemSize(40px);
-    margin-top: f.pixelToRemSize(10px);
+    margin-left: 40px;
+    margin-top: 10px;
     position: fixed;
-    width: f.pixelToRemSize(50px);
+    width: 50px;
     z-index: v.$zindexHamburger;
 
     & > span, & > span::before {
@@ -24,10 +24,10 @@
     & > span {
       background: v.$logoColor;
       display: block;
-      height: f.pixelToRemSize(2px);
-      margin-bottom: f.pixelToRemSize(6px);
+      height: 2px;
+      margin-bottom: 6px;
       position: relative;
-      width: f.pixelToRemSize(30px);
+      width: 30px;
     }
 
     & > span::before {
@@ -36,7 +36,7 @@
       height: 100%;
       left: 0;
       position: absolute;
-      top: f.pixelToRemSize(-10px);
+      top: -10px;
       width: 100%;
     }
 
@@ -48,10 +48,10 @@
         size: f.pixelToRemSize(v.$fontSize14);
         style: normal;
       }
-      left: f.pixelToRemSize(-6px);
+      left: -6px;
       line-height: v.$lineHeight24;
       position: absolute;
-      top: f.pixelToRemSize(5px);
+      top: 5px;
     }
   }
 
@@ -64,7 +64,7 @@
     height: v.$pcHeaderHeight;
     justify-content: center;
     left: 0;
-    padding: 0 f.pixelToRemSize(40px);
+    padding: 0 40px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -87,7 +87,7 @@
     }
 
     img {
-      height: f.pixelToRemSize(50px);
+      height: 50px;
       width: auto;
     }
   }
@@ -121,12 +121,12 @@
       align-items: flex-start;
       display: flex;
       flex-direction: column;
-      gap: f.pixelToRemSize(40px);
-      margin: calc(f.pixelToRemSize(56px) + v.$pcHeaderHeight) f.pixelToRemSize(40px) 0;
+      gap: 40px;
+      margin: calc(56px + v.$pcHeaderHeight) 40px 0;
     }
 
     &__list__item:first-child {
-      gap: f.pixelToRemSize(56px);
+      gap: 56px;
     }
 
     &__list__item span {
@@ -137,7 +137,7 @@
     &__list__item__shop {
       color: v.$logoColor;
       font-weight: 400;
-      padding: f.pixelToRemSize(16px) f.pixelToRemSize(72px);
+      padding: 16px 72px;
       text-align: center;
     }
 
@@ -150,7 +150,7 @@
       height: auto;
 
       & img {
-        width: f.pixelToRemSize(150px);
+        width: 150px;
       }
     }
 
@@ -167,20 +167,20 @@
   &.js-nav-is-active {
     .l-header__hamburger {
       & > span {
-        margin-top: f.pixelToRemSize(0);
-        top: f.pixelToRemSize(-5px);
+        margin-top: 0;
+        top: -5px;
         transform: rotate(30deg);
       }
   
       & > span::before {
-        top: f.pixelToRemSize(0px);
+        top: 0px;
         transform: rotate(-60deg);
       }
   
       & > span::after {
         content: 'close';
-        left: f.pixelToRemSize(3px);
-        margin-top: f.pixelToRemSize(4px);
+        left: 3px;
+        margin-top: 4px;
         transform: rotate(-30deg);
       }
     }

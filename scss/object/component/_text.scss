@@ -33,12 +33,12 @@
   &::after {
     content: '';
     display: inline-block;
-    height: f.pixelToRemSize(20px);
+    height: 20px;
     mask-image: url(../img/icon/shopping-cart.svg);
     mask-size: cover;
-    margin-left: f.pixelToRemSize(8px);
+    margin-left: 8px;
     vertical-align: middle;
-    width: f.pixelToRemSize(18.8px);
+    width: 18.8px;
   }
 
   &__attention {

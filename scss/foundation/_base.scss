@@ -44,7 +44,7 @@ section h2 {
     weight: 700;
   }
   line-height: v.$lineHeight66;
-  margin-bottom: f.pixelToRemSize(16);
+  margin-bottom: 16px;
 
   @include m.mq {
     font: {
