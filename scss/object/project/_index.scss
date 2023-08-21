@@ -67,6 +67,14 @@
       background-color: v.$textColor;
     }
 
+    a:hover {
+      color: v.$white;
+
+      &::after {
+        background-color: v.$white;
+      }
+    }
+
     p {
       background-color: rgba(v.$textColor, 0.13);
       color: v.$white;
@@ -565,8 +573,14 @@
   &__list__item__question {
     background: v.$subPrimaryColor;
     border-radius: 16px;
+    cursor: pointer;
     padding: 16px 24px;
     position: relative;
+    transition: padding-left .4s;
+
+    &:hover {
+      padding-left: 40px;
+    } 
   }
 
   // 開閉ボタン
@@ -587,6 +601,10 @@
 
   &__list__item__answer {
     margin: 16px 24px 0;
+
+    @include m.mq() {
+      display: none;
+    }
   }
 
   &__other {
@@ -596,6 +614,15 @@
   &__list__item.js-faq-is-not-active {
     .p-faq__list__item__question::after {
       transform: rotate(90deg) translateY(-50%);
+    }
+  }
+
+  a {
+    color: v.$logoColor;
+    text-decoration: underline 2px v.$primaryColor;
+
+    &:hover {
+      font-weight: 700;
     }
   }
 }
@@ -629,6 +656,14 @@
 
   a::after {
     background-color: v.$textColor;
+  }
+
+  a:hover {
+    color: v.$white;
+
+    &::after {
+      background-color: v.$white;
+    }
   }
 
   p {

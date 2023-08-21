@@ -64,6 +64,15 @@ section h3 {
   line-height: v.$lineHeight29;
 }
 
+footer {
+  font: {
+    size: f.pixelToRemSize(v.$fontSize14);
+    style: normal;
+    weight: 400;
+  }
+  line-height: v.$lineHeight24;
+}
+
 img,
 video {
 	max-width: 100%;

@@ -6,4 +6,8 @@
   background-color: v.$white;
   border-radius: 34px;
   display: inline-block;
+
+  &:hover {
+    background-color: v.$textColor;
+  }
 }

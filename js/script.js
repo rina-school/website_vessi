@@ -142,9 +142,20 @@ $(document).ready(function () {
     // FAQの開閉
     // 769px以上（PC用）の場合
     if (window.innerWidth > 768) {
-      if ($faqListItem.hasClass('js-faq-is-not-active')) {
-        $(this).removeClass('js-faq-is-not-active');
-      }
+      $faqListItem.each(function () {
+        if ($(this).hasClass('js-faq-is-not-active')) {
+          $(this).removeClass('js-faq-is-not-active');
+          $(this).children('dd').slideDown();
+        }
+      });
+    // 768px以下（SP用）の場合
+    } else {
+      $faqListItem.each(function () {
+        if (!$(this).hasClass('js-faq-is-not-active')) {
+          $(this).addClass('js-faq-is-not-active');
+          $(this).children('dd').slideUp();
+        }
+      });
     }
     $faqListItem.off('click');
     $faqListItem.on('click', function(e) {

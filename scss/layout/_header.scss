@@ -107,6 +107,11 @@
     }
   }
 
+  &__content__shop:hover {
+    border-bottom: v.$logoColor 1px solid;
+    padding-top: 1px;
+  }
+
   &__nav {
     background-color: v.$subPrimaryColor;
     height: 100vh;
@@ -189,6 +194,23 @@
       position: fixed;
       transform: translateX(0);
       z-index: v.$zindexNav;
+    }
+
+    .l-header__nav__list__item:not(:last-child) {
+      transition: padding-left .4s;
+
+      &:hover {
+        padding-left: 16px;
+      }
+    }
+
+    .l-header__nav__list__item__shop:hover {
+      background-color: v.$logoColor;
+      color: v.$white;
+
+      &::after {
+        background-color: v.$white;
+      }
     }
   }
 }
