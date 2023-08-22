@@ -431,7 +431,7 @@
   }
 
   &__content__text__insole {
-    left: min(f.pixelToVwSize(532px, v.$tbViewPort), 784px);
+    left: min(f.pixelToVwSize(532px, v.$tbViewPort), 840px);
     position: absolute;
     top: min(f.pixelToVwSize(296px, v.$tbViewPort), 320px);
     width: min(f.pixelToVwSize(136px, v.$tbViewPort), 232px);
@@ -443,6 +443,134 @@
     top: min(f.pixelToVwSize(424px, v.$tbViewPort), 520px);
     width: min(f.pixelToVwSize(320px, v.$tbViewPort), 400px);
   }
+}
+
+// 商品（production）
+.p-product {
+  &__title h2 {
+    text-align: center;
+  }
+
+  &__title p {
+    text-align: left;
+  }
+
+  &__content__lineup__list {
+    display: grid;
+    gap: min(f.pixelToVwSize(35px, v.$pcViewPort), 35px);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 56px 0;
+  }
+
+  &__content__lineup__list__item {
+    background: v.$subPrimaryColor;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  &__card__img {
+    margin: 0 auto;
+  }
+
+  &__card__img img {
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    max-height: 197px;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__card__text {
+    flex: 1;
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__card__text h3 {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &__card__text p {
+    text-align: left;
+  }
+
+  &__content__lineup__list__item a {
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  &__content__lineup__list__item a:hover {
+    color: v.$white;
+  }
+
+  &__content__lineup__list__item a::after {
+    background-color: v.$textColor;
+  }
+
+  &__content__lineup__list__item a:hover::after {
+    background-color: v.$white;
+  }
+
+  &__content__category__list {
+    display: grid;
+    gap: min(f.pixelToVwSize(35px, v.$pcViewPort), 35px);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  &__content__category__list__item {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__content__category__list__item__img {
+    height: auto;
+    width: 100%;
+  }
+
+  &__content__category__list__item__img img {
+    border-radius: 16px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    object-fit: cover;
+    width: min(100%, 350px);
+  }
+
+  &__content__category__list__item__img__men {
+    object-position: 0 -100px;
+  }
+
+  &__content__category__list__item a {
+    border: 1px solid v.$textColor;
+    margin: 24px auto 16px;
+    padding: 16px 0;
+    width: 80%;
+  }
+
+  &__content__category__list__item a:hover {
+    color: v.$white;
+  }
+
+  &__content__category__list__item a::after {
+    background-color: v.$textColor;
+  }
+
+  &__content__category__list__item a:hover::after {
+    background-color: v.$white;
+  }
+
+  &__content__shoplink__attention {
+    margin-top: 40px;
+  }
+
+  &__content__shoplink__attention p {
+    text-align: center;
+  }
+
 }
 
 // 保証（Warranty）
@@ -618,11 +746,10 @@
   }
 
   a {
-    color: v.$logoColor;
-    text-decoration: underline 2px v.$primaryColor;
+    color: v.$ankerLinkColor;
 
     &:hover {
-      font-weight: 700;
+      text-decoration: underline 1px v.$ankerLinkColor;
     }
   }
 }

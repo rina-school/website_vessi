@@ -19,7 +19,7 @@ body {
   line-height: 28px;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   body {
     font-size: min(3.7333333333vw, 16px);
     line-height: min(6.4vw, 28px);
@@ -29,7 +29,7 @@ body {
 section:not(.p-hero) {
   padding: 100px 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   section:not(.p-hero) {
     padding: clamp(64px, 17.0666666667vw, 100px) 0;
   }
@@ -42,7 +42,7 @@ section h2 {
   line-height: 66px;
   margin-bottom: 16px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   section h2 {
     font-size: min(9.6vw, 50px);
     font-weight: 700;
@@ -354,7 +354,7 @@ li {
 }
 
 .c-section__inner {
-  max-width: 1120px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 30px;
   width: 100%;
@@ -363,7 +363,7 @@ li {
 .c-pc__only {
   display: initial;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .c-pc__only {
     display: none;
   }
@@ -372,7 +372,7 @@ li {
 .c-sp__only {
   display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .c-sp__only {
     display: initial;
   }
@@ -735,7 +735,7 @@ li {
   width: min(36.4583333333vw, 400px);
 }
 .p-technology__content__text__insole {
-  left: min(69.2708333333vw, 784px);
+  left: min(69.2708333333vw, 840px);
   position: absolute;
   top: min(38.5416666667vw, 320px);
   width: min(17.7083333333vw, 232px);
@@ -745,6 +745,110 @@ li {
   position: absolute;
   top: min(55.2083333333vw, 520px);
   width: min(41.6666666667vw, 400px);
+}
+
+.p-product__title h2 {
+  text-align: center;
+}
+.p-product__title p {
+  text-align: left;
+}
+.p-product__content__lineup__list {
+  display: grid;
+  gap: min(3.125vw, 35px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 56px 0;
+}
+.p-product__content__lineup__list__item {
+  background: #CDE0DD;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px;
+  text-align: center;
+}
+.p-product__card__img {
+  margin: 0 auto;
+}
+.p-product__card__img img {
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  max-height: 197px;
+  max-width: 300px;
+  width: 100%;
+}
+.p-product__card__text {
+  flex: 1;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+.p-product__card__text h3 {
+  margin-bottom: 8px;
+  text-align: center;
+}
+.p-product__card__text p {
+  text-align: left;
+}
+.p-product__content__lineup__list__item a {
+  padding: 16px 0;
+  width: 100%;
+}
+.p-product__content__lineup__list__item a:hover {
+  color: #fff;
+}
+.p-product__content__lineup__list__item a::after {
+  background-color: #2C2C2C;
+}
+.p-product__content__lineup__list__item a:hover::after {
+  background-color: #fff;
+}
+.p-product__content__category__list {
+  display: grid;
+  gap: min(3.125vw, 35px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.p-product__content__category__list__item {
+  text-align: center;
+  width: 100%;
+}
+.p-product__content__category__list__item__img {
+  height: auto;
+  width: 100%;
+}
+.p-product__content__category__list__item__img img {
+  border-radius: 16px;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: min(100%, 350px);
+}
+.p-product__content__category__list__item__img__men {
+  -o-object-position: 0 -100px;
+     object-position: 0 -100px;
+}
+.p-product__content__category__list__item a {
+  border: 1px solid #2C2C2C;
+  margin: 24px auto 16px;
+  padding: 16px 0;
+  width: 80%;
+}
+.p-product__content__category__list__item a:hover {
+  color: #fff;
+}
+.p-product__content__category__list__item a::after {
+  background-color: #2C2C2C;
+}
+.p-product__content__category__list__item a:hover::after {
+  background-color: #fff;
+}
+.p-product__content__shoplink__attention {
+  margin-top: 40px;
+}
+.p-product__content__shoplink__attention p {
+  text-align: center;
 }
 
 .p-warranty__content {
@@ -873,7 +977,7 @@ li {
 .p-faq__list__item__answer {
   margin: 16px 24px 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .p-faq__list__item__answer {
     display: none;
   }
@@ -885,12 +989,11 @@ li {
   transform: rotate(90deg) translateY(-50%);
 }
 .p-faq a {
-  color: #005864;
-  -webkit-text-decoration: underline 2px #8FC6AB;
-          text-decoration: underline 2px #8FC6AB;
+  color: #4974a5;
 }
 .p-faq a:hover {
-  font-weight: 700;
+  -webkit-text-decoration: underline 1px #4974a5;
+          text-decoration: underline 1px #4974a5;
 }
 
 .p-promotion {
