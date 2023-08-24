@@ -8,6 +8,7 @@ $(document).ready(function () {
   const $heroImg = $('.p-hero__bg__list__item__img');
   const $anchorLink = $('a[href^="#"]');
   const $faqListItem = $('.p-faq__list__item');
+  const $productImgPicture = $('.p-product__card__img__picture');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -50,6 +51,7 @@ $(document).ready(function () {
           $(this).addClass('js-animetion-scroll');
         }
       });
+
     });
 
     // cssのアニメーション処理（スクロールなし）
@@ -138,6 +140,26 @@ $(document).ready(function () {
       let headerHeight = $headerFix[0].getBoundingClientRect().height;
       $heroImg.height(windowHeight - headerHeight);
     }
+
+    // 商品画像をクリックした際のモーダルウィンドウ
+    $productImgPicture.on('click', function(e) {
+      $productImgPicture.modaal({
+        type: 'image',
+        overlay_close: true,//モーダル背景クリック時に閉じるか
+        before_open: function(){// モーダルが開く前に行う動作
+          $('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
+          if (!$(this).hasClass('js-product-modaal-active')) {
+            $(this).addClass('js-product-modaal-active');
+          }
+        },
+        after_close:function(){// モーダルが閉じた後に行う動作
+          $('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
+          if ($(this).hasClass('js-product-modaal-active')) {
+            $(this).removeClass('js-product-modaal-active');
+          }
+        },
+      });
+    });
 
     // FAQの開閉
     // 768px以上（PC用）の場合

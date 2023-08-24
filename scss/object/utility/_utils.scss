@@ -1,0 +1,19 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+.modaal-inner-wrapper,
+.modaal-container,
+.modaal-content {
+  max-width: 939px !important;
+  width: 100% !important;
+}
+
+.modaal-gallery-item.is_active {
+  max-width: 939px !important;
+}
+
+.modaal-close:hover:before,
+.modaal-close:hover:after {
+  background: v.$logoColor;
+}

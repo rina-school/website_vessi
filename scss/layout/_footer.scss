@@ -46,6 +46,8 @@
   }
 
   &__content__text__list__item a:hover {
-    text-decoration: underline 1px v.$textColor;
+    -webkit-text-decoration: underline v.$textColor;
+    text-decoration: underline v.$textColor;
+    text-decoration-thickness: 1px;
   }
 }

@@ -257,13 +257,25 @@
     transform: scale(2.2);
   }
 
+  &__founders__andy:hover {
+    transform: scale(2.4, 2.4);
+  }
+
   &__founders__tony {
     object-position: 45% 20px;
     transform: scale(2.3);
   }
 
+  &__founders__tony:hover {
+    transform: scale(2.5, 2.5);
+  }
+
   &__founders__mikaella {
     object-position: 0 30%;
+  }
+
+  &__founders__mikaella:hover {
+    transform: scale(1.1, 1.1);
   }
 
   &__founders__list__item p {
@@ -281,7 +293,7 @@
 
   &__shape__fill {
     background: url(../img/icon/waves.svg) repeat-x;
-    background-size: v.$waveWidth auto;
+    background-size: v.$waveWidth 30px;
     animation: waveBg 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
     bottom: 0;
     height: 100%;
@@ -418,6 +430,7 @@
       size: f.pixelToRemSize(v.$fontSize16);
     }
     line-height: f.pixelToRemSize(v.$lineHeight28);
+    -webkit-text-decoration: underline v.$primaryColor;
     text-decoration: underline v.$primaryColor;
     text-decoration-thickness: 4px;
     text-underline-offset: 0px;
@@ -473,15 +486,20 @@
 
   &__card__img {
     margin: 0 auto;
+    overflow: hidden;
   }
 
-  &__card__img img {
+  &__card__img__picture {
+    aspect-ratio: 300 / 197;
     height: auto;
     object-fit: cover;
     margin: 0 auto;
-    max-height: 197px;
-    max-width: 300px;
+    max-width: 220px;
     width: 100%;
+  }
+
+  &__card__img__picture:hover {
+    transform: scale(1.1,1.1);
   }
 
   &__card__text {
@@ -528,16 +546,21 @@
   }
 
   &__content__category__list__item__img {
+    border-radius: 16px;
     height: auto;
-    width: 100%;
+    overflow: hidden;
+    width: min(100%, 350px);
   }
 
   &__content__category__list__item__img img {
-    border-radius: 16px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
     object-fit: cover;
     width: min(100%, 350px);
+  }
+
+  &__content__category__list__item__img img:hover {
+    transform: scale(1.1,1.1);
   }
 
   &__content__category__list__item__img__men {
@@ -570,7 +593,6 @@
   &__content__shoplink__attention p {
     text-align: center;
   }
-
 }
 
 // 保証（Warranty）
@@ -749,7 +771,9 @@
     color: v.$ankerLinkColor;
 
     &:hover {
-      text-decoration: underline 1px v.$ankerLinkColor;
+      -webkit-text-decoration: underline v.$ankerLinkColor;
+      text-decoration: underline v.$ankerLinkColor;
+      text-decoration-thickness: 1px;
     }
   }
 }
@@ -775,6 +799,7 @@
   }
 
   a {
+    border: 1px solid v.$white;
     margin-bottom: 32px;
     margin-top: 48px;
     padding: 16px 72px;
