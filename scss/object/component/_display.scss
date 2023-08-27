@@ -12,7 +12,7 @@
 .c-pc__only {
   display: initial;
 
-  @include m.mq {
+  @include m.sp {
     display: none;
   }
 }
@@ -20,7 +20,7 @@
 .c-sp__only {
   display: none;
 
-  @include m.mq {
+  @include m.sp {
     display: initial;
   }
 }

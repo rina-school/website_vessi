@@ -777,6 +777,19 @@ li {
   padding: 30px 24px;
   text-align: center;
 }
+.p-product__content__lineup__list__item a {
+  padding: 16px 0;
+  width: 100%;
+}
+.p-product__content__lineup__list__item a:hover {
+  color: #fff;
+}
+.p-product__content__lineup__list__item a::after {
+  background-color: #2C2C2C;
+}
+.p-product__content__lineup__list__item a:hover::after {
+  background-color: #fff;
+}
 .p-product__card__img {
   margin: 0 auto;
   overflow: hidden;
@@ -805,18 +818,51 @@ li {
 .p-product__card__text p {
   text-align: left;
 }
-.p-product__content__lineup__list__item a {
-  padding: 16px 0;
-  width: 100%;
+.p-product__card__accessories {
+  align-items: center;
+  flex-direction: row;
+  gap: min(2.8571428571vw, 32px);
+  grid-column: span 3;
+  justify-content: center;
 }
-.p-product__content__lineup__list__item a:hover {
-  color: #fff;
+@media screen and (max-width: 959px) {
+  .p-product__card__accessories {
+    flex-direction: column;
+    gap: 0;
+    grid-column: span 1;
+    justify-content: space-between;
+  }
 }
-.p-product__content__lineup__list__item a::after {
-  background-color: #2C2C2C;
+.p-product__card__accessories .p-product__card__img {
+  margin: 0;
 }
-.p-product__content__lineup__list__item a:hover::after {
-  background-color: #fff;
+@media screen and (max-width: 959px) {
+  .p-product__card__accessories .p-product__card__img {
+    margin: 0 auto;
+  }
+}
+.p-product__card__accessories__text {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 959px) {
+  .p-product__card__accessories__text {
+    flex-grow: 1;
+  }
+}
+.p-product__card__accessories__text h3 {
+  font-size: 1rem;
+  line-height: 28px;
+  text-align: left;
+}
+.p-product__card__accessories__text a {
+  width: 60%;
+}
+@media screen and (max-width: 959px) {
+  .p-product__card__accessories__text a {
+    width: 100%;
+  }
 }
 .p-product__content__category__list {
   display: grid;
@@ -830,6 +876,7 @@ li {
 .p-product__content__category__list__item__img {
   border-radius: 16px;
   height: auto;
+  margin: 0 auto;
   overflow: hidden;
   width: min(100%, 350px);
 }

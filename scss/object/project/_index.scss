@@ -484,6 +484,23 @@
     text-align: center;
   }
 
+  &__content__lineup__list__item a {
+    padding: 16px 0;
+    width: 100%;
+  }
+
+  &__content__lineup__list__item a:hover {
+    color: v.$white;
+  }
+
+  &__content__lineup__list__item a::after {
+    background-color: v.$textColor;
+  }
+
+  &__content__lineup__list__item a:hover::after {
+    background-color: v.$white;
+  }
+
   &__card__img {
     margin: 0 auto;
     overflow: hidden;
@@ -517,21 +534,53 @@
     text-align: left;
   }
 
-  &__content__lineup__list__item a {
-    padding: 16px 0;
-    width: 100%;
+  &__card__accessories {
+    align-items: center;
+    flex-direction: row;
+    gap: min(f.pixelToVwSize(32px, v.$pcViewPort), 32px);
+    grid-column: span 3;
+    justify-content: center;
+
+    @include m.tb {
+      flex-direction: column;
+      gap: 0;
+      grid-column: span 1;
+      justify-content: space-between;
+    }
   }
 
-  &__content__lineup__list__item a:hover {
-    color: v.$white;
+  &__card__accessories &__card__img {
+    margin: 0;
+
+    @include m.tb {
+      margin: 0 auto;
+    }
   }
 
-  &__content__lineup__list__item a::after {
-    background-color: v.$textColor;
+  &__card__accessories__text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include m.tb {
+      flex-grow: 1
+    }
   }
 
-  &__content__lineup__list__item a:hover::after {
-    background-color: v.$white;
+  &__card__accessories__text h3 {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize16);
+    }
+    line-height: v.$lineHeight28;
+    text-align: left;
+  }
+
+  &__card__accessories__text a {
+    width: 60%;
+
+    @include m.tb {
+      width: 100%;
+    }
   }
 
   &__content__category__list {
@@ -548,6 +597,7 @@
   &__content__category__list__item__img {
     border-radius: 16px;
     height: auto;
+    margin: 0 auto;
     overflow: hidden;
     width: min(100%, 350px);
   }
@@ -682,7 +732,7 @@
   }
 }
 
-// お客様の声（Customer Reviews）
+// お客様の声（Reviews）
 
 
 // アイキャッチ（FAQ用）
@@ -752,7 +802,7 @@
   &__list__item__answer {
     margin: 16px 24px 0;
 
-    @include m.mq() {
+    @include m.sp() {
       display: none;
     }
   }

@@ -21,7 +21,7 @@ body {
   line-height: v.$lineHeight28;
   width: 100%;
 
-  @include m.mq {
+  @include m.sp {
     font: {
       size: min(f.pixelToVwSize(v.$fontSize14, v.$spViewPort), v.$fontSize16);
     }
@@ -32,7 +32,7 @@ body {
 section:not(.p-hero) {
   padding: v.$pcSectionPaddingHeight 0;
 
-  @include m.mq {
+  @include m.sp {
     padding: clamp(v.$spSectionPaddingHeight, f.pixelToVwSize(v.$spSectionPaddingHeight, v.$spViewPort), v.$pcSectionPaddingHeight) 0;
   }
 }
@@ -46,7 +46,7 @@ section h2 {
   line-height: v.$lineHeight66;
   margin-bottom: 16px;
 
-  @include m.mq {
+  @include m.sp {
     font: {
       size: min(f.pixelToVwSize(v.$fontSize36, v.$spViewPort), v.$fontSize50);
       weight: 700;

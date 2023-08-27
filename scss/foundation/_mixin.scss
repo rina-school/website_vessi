@@ -1,7 +1,14 @@
 @use './variables' as v;
 
-// ブレイクポイント768px以下
-@mixin mq {
+// ブレイクポイント959px以下
+@mixin tb {
+  @media screen and (max-width: v.$breakPointTb) {
+    @content;
+  }
+}
+
+// ブレイクポイント767px以下
+@mixin sp {
   @media screen and (max-width: v.$breakPointSp) {
     @content;
   }
