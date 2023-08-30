@@ -9,6 +9,7 @@ $(document).ready(function () {
   const $anchorLink = $('a[href^="#"]');
   const $faqListItem = $('.p-faq__list__item');
   const $productImgPicture = $('.p-product__card__img__picture');
+  const $loading = $('.p-loading');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -22,6 +23,11 @@ $(document).ready(function () {
       this.addEventListener('touchmove', handle, { passive: true });
     }
   };
+
+  // ローディング画面
+  $(window).on('load', function() {
+    $loading.delay(1200).fadeOut('slow');
+  });
 
   // スクロールした場合の処理
   $(window).on('scroll', () => {

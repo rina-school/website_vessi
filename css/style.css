@@ -95,7 +95,7 @@ li {
   margin-top: 10px;
   position: fixed;
   width: 50px;
-  z-index: 10000;
+  z-index: 3000;
 }
 .l-header__hamburger > span, .l-header__hamburger > span::before {
   transition: 0.3s;
@@ -241,7 +241,7 @@ li {
 .l-header.js-nav-is-active .l-header__nav {
   position: fixed;
   transform: translateX(0);
-  z-index: 5000;
+  z-index: 2000;
 }
 .l-header.js-nav-is-active .l-header__nav__list__item:not(:last-child) {
   transition: padding-left 0.4s;
@@ -403,7 +403,7 @@ li {
   transform: translateY(-50%);
 }
 .p-hero__text__catchcopy__content.js-animation {
-  animation: bar-animation 1.7s ease-out;
+  animation: 1.7s bar-animation 1.5s ease-out;
   background-color: transparent;
   background-image: linear-gradient(to left, transparent 0%, transparent 50%, #8FC6AB 50%, #8FC6AB 100%);
   background-size: 200% auto;
@@ -450,7 +450,7 @@ li {
   text-align: center;
 }
 .p-hero__scroll.js-animation {
-  animation: arrowmove 1.1s ease-in-out infinite;
+  animation: 1.1s arrowmove ease-in-out infinite;
   bottom: 1%;
   position: absolute;
   right: 50%;
@@ -988,6 +988,51 @@ li {
   background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
 }
 
+.p-reviews__title {
+  margin-bottom: 56px;
+}
+.p-reviews__title h2 {
+  text-align: center;
+}
+.p-reviews__title p {
+  text-align: center;
+}
+.p-reviews__content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+@media screen and (max-width: 959px) {
+  .p-reviews__content {
+    flex-direction: column;
+    gap: 48px;
+  }
+}
+.p-reviews__content__comment {
+  border: 2px solid #CDE0DD;
+  border-radius: 16px;
+  flex: 1;
+  padding: 40px;
+}
+.p-reviews__content__title__jp {
+  margin-bottom: 16px;
+  text-align: center;
+}
+.p-reviews__content__text__jp {
+  margin-bottom: 16px;
+}
+.p-reviews__content__author {
+  margin-bottom: 32px;
+  text-align: center;
+}
+.p-reviews__content__en {
+  margin-bottom: 24px;
+}
+.p-reviews__content__title__en {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
 .p-eyecatch__background__faq {
   background-image: url(../img/photo/Weekend_MarbleWhite5.jpg);
   background-image: url(../img/webp/Weekend_MarbleWhite5.webp);
@@ -1048,6 +1093,7 @@ li {
   }
 }
 .p-faq__other {
+  margin-top: 48px;
   text-align: center;
 }
 .p-faq__list__item.js-faq-is-not-active .p-faq__list__item__question::after {
@@ -1100,6 +1146,25 @@ li {
   margin-bottom: 0;
 }
 
+.p-loading {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+.p-loading__video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 /* Utility ------------ */
 .modaal-inner-wrapper,
 .modaal-image .modaal-container,
@@ -1110,6 +1175,10 @@ li {
 
 .modaal-gallery-item.is_active {
   max-width: 939px !important;
+}
+
+.modaal-close {
+  top: 90px !important;
 }
 
 .modaal-close:hover:before,

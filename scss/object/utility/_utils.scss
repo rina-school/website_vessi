@@ -13,6 +13,10 @@
   max-width: 939px !important;
 }
 
+.modaal-close {
+  top: calc(20px + v.$pcHeaderHeight) !important;
+}
+
 .modaal-close:hover:before,
 .modaal-close:hover:after {
   background: v.$logoColor;
