@@ -39,8 +39,9 @@ $subPrimaryColor2: #F6F9F8;
 $logoColor: #005864;
 $textColor: #2C2C2C;
 $reviewsStarColor: #FDB603;
-$ankerLinkColor:#4974a5;
-$white: #fff;
+$reviewsStarColorGray: #CCCCCC;
+$ankerLinkColor:#4974A5;
+$white: #FFFFFF;
 
 // ブレークポイント
 $breakPointTb: 959px;
@@ -53,7 +54,8 @@ $pcSectionPaddingHeight: 100px;
 $spSectionPaddingHeight: 64px;
 $pcSectionPaddingWidth: 30px;
 $spSectionPaddingWidth: 16px;
-$waveWidth: 1280px;
+$pcWaveWidth: 1280px;
+$spWaveWidth: 640px;
 
 // z-index
 $zindexLoading: 10000;
@@ -61,5 +63,7 @@ $zindexHamburger: 3000;
 $zindexNav: 2000;
 $zindexHeader: 1000;
 $zindexHeroImg: 10;
+$zindexStarYellow: 2;
 $zindexAboutText: 1;
+$zindexStarGray: 0;
 $zindexAboutBorder: -1;

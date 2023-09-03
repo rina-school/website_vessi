@@ -7,6 +7,10 @@
   border-radius: 34px;
   display: inline-block;
 
+  @include m.sp {
+    border-radius: min(f.pixelToVwSize(29px, v.$spViewPort), 34px);
+  }
+
   &:hover {
     background-color: v.$textColor;
   }

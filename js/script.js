@@ -5,11 +5,15 @@ $(document).ready(function () {
   const $headerContent = $('.l-header__content');
   const $navBtn = $('.l-header__hamburger');
   const $heroSlick = $('.js-hero-slick');
-  const $heroImg = $('.p-hero__bg__list__item__img');
   const $anchorLink = $('a[href^="#"]');
   const $faqListItem = $('.p-faq__list__item');
   const $productImgPicture = $('.p-product__card__img__picture');
   const $loading = $('.p-loading');
+  const $loadingLogo = $('.p-loading__logo');
+  const $loadingLogoFadeUp = $('.p-loading__logo__fadeup');
+  const $loadingLogoLetter = $('.p-loading__logo__letter');
+  const $jsLimitTextReview = $('.js-limit__text__review');
+  const $jsLimitTextProduct = $('.js-limit__text__product');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -26,23 +30,19 @@ $(document).ready(function () {
 
   // ローディング画面
   $(window).on('load', function() {
-    $loading.delay(1200).fadeOut('slow');
+    $loadingLogoLetter.delay(2400).fadeOut('slow');
+    $loadingLogoFadeUp.delay(2500).fadeOut('slow');
+    $loadingLogo.delay(2600).fadeOut('slow');
+    $loading.delay(2800).fadeOut('slow');
   });
 
-  // スクロールした場合の処理
-  $(window).on('scroll', () => {
-    let windowHeight = window.innerHeight;
-    let scrollTop = $(window).scrollTop();
-    
-    // cssのアニメーション処理
-    $('.p-wave__shape__fill').each(function () {
-      let position = $(this).offset().top;
-      if (scrollTop > position - windowHeight) {
-        $(this).addClass('js-animetion-scroll');
-      }
-    });
-  });
+  // 商品一覧の表示文字数制限（SP用）
+  jsLimitTextFunction($jsLimitTextProduct, 50);
 
+  // レビューの表示文字数制限（SP用）
+  jsLimitTextFunction($jsLimitTextReview, 100);
+
+  // ロード及びリサイズした時
   $(window).on('load resize', () => {
     let windowHeight = window.innerHeight;
     let scrollTop = $(window).scrollTop();
@@ -61,7 +61,7 @@ $(document).ready(function () {
     });
 
     // cssのアニメーション処理（スクロールなし）
-    $('.p-hero__text__catchcopy__content, .p-hero__scroll').each(function () {
+    $('.p-hero__text__catchcopy__content, .p-hero__scroll').each(function() {
       if (!$(this).hasClass('js-animation')) {
         $(this).addClass('js-animation');
       }
@@ -141,12 +141,6 @@ $(document).ready(function () {
       });
     });
 
-    // スマホ、タブレットでメインビジュアルの高さを「viewportの高さいっぱい-headerの高さ」にする
-    if ((navigator.userAgent.match(/iPhone|iPad|Android.+Mobile|Macintosh/) && 'ontouchend' in document) || (navigator.userAgentData && navigator.userAgentData.mobile)) {
-      let headerHeight = $headerFix[0].getBoundingClientRect().height;
-      $heroImg.height(windowHeight - headerHeight);
-    }
-
     // 商品画像をクリックした際のモーダルウィンドウ
     $productImgPicture.on('click', function(e) {
       $productImgPicture.modaal({
@@ -167,17 +161,21 @@ $(document).ready(function () {
       });
     });
 
-    // FAQの開閉
     // 768px以上（PC用）の場合
-    if (window.innerWidth > 767) {
+    if (window.innerWidth >= 768) {
+
+      // FAQの開閉
       $faqListItem.each(function () {
         if ($(this).hasClass('js-faq-is-not-active')) {
           $(this).removeClass('js-faq-is-not-active');
           $(this).children('dd').slideDown();
         }
       });
+
     // 767px以下（SP用）の場合
     } else {
+
+      // FAQの開閉
       $faqListItem.each(function () {
         if (!$(this).hasClass('js-faq-is-not-active')) {
           $(this).addClass('js-faq-is-not-active');
@@ -185,6 +183,8 @@ $(document).ready(function () {
         }
       });
     }
+
+    // FAQの開閉
     $faqListItem.off('click');
     $faqListItem.on('click', function(e) {
       $(this).toggleClass('js-faq-is-not-active');
@@ -192,4 +192,33 @@ $(document).ready(function () {
       e.stopPropagation();
     });
   });
+
+  // 関数定義
+  // 表示文字数制限（spanタグで編集しているものは全て小文字になるが許容する）
+  function jsLimitTextFunction($element, $maxLength) {
+    $element.each(function() {
+      const $textWrapper = $(this);
+      const fullText = $textWrapper.html();
+      const text = $textWrapper.text();
+      const $readMore = $('<a href="/" class="c-text__expand-link">もっと見る</a>');
+  
+      // ロード及びリサイズした時
+      $(window).on('load resize', () => {
+        if (window.innerWidth >= 768) {
+          $textWrapper.html(fullText);
+        } else {
+          if (text.length > $maxLength) {
+            const limitText = text.substring(0, $maxLength) + '... ';
+            $textWrapper.html(limitText).append($readMore);
+  
+            $readMore.on('click', function(e) {
+              e.preventDefault();
+              $textWrapper.html(fullText);
+              e.stopPropagation();
+            });
+          }
+        }
+      });
+    });
+  }
 })

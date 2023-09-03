@@ -20,6 +20,13 @@
     weight: 700;
   }
   line-height: f.pixelToRemSize(v.$lineHeight29);
+
+  @include m.sp {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize16, v.$spViewPort), v.$fontSize20);
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight28, v.$spViewPort), v.$lineHeight29);
+  }
 }
 
 // ショップへ遷移するリンクのテキスト
@@ -30,6 +37,13 @@
   }
   line-height: f.pixelToRemSize(v.$lineHeight29);
 
+  @include m.sp {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize16, v.$spViewPort), v.$fontSize20);
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight28, v.$spViewPort), v.$lineHeight29);
+  }
+
   &::after {
     content: '';
     display: inline-block;
@@ -38,7 +52,20 @@
     mask-size: cover;
     margin-left: 8px;
     vertical-align: middle;
-    width: 18.8px;
+    width: 19px;
+
+    @include m.sp {
+      height: min(f.pixelToVwSize(16px, v.$spViewPort), 20px);
+      margin-left: min(f.pixelToVwSize(4px, v.$spViewPort), 8px);
+      width: min(f.pixelToVwSize(15.15px, v.$spViewPort), 19px);
+    }
+  }
+
+  // spのヘッダーのみ変更する
+  &.l-header__content__shop::after {
+    @include m.sp {
+      display: none;
+    }
   }
 
   &__attention {
@@ -47,5 +74,29 @@
       weight: 400;
     }
     line-height: f.pixelToRemSize(v.$lineHeight24);
+
+    @include m.sp {
+      font: {
+        size: min(f.pixelToVwSize(v.$fontSize12, v.$spViewPort), v.$fontSize14);
+      }
+      line-height: min(f.pixelToVwSize(v.$lineHeight20, v.$spViewPort), v.$lineHeight24);
+    }
+  }
+}
+
+// 「もっと見る」のスタイル
+.c-text__expand-link {
+  @include m.sp {
+    color: v.$ankerLinkColor;
+    cursor: pointer;
+  }
+}
+
+.c-text__expand-link:hover {
+  @include m.sp {
+    color: v.$ankerLinkColor;
+    -webkit-text-decoration: underline v.$ankerLinkColor;
+    text-decoration: underline v.$ankerLinkColor;
+    text-decoration-thickness: 1px;
   }
 }

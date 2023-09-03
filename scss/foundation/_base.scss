@@ -62,6 +62,13 @@ section h3 {
     weight: 700;
   }
   line-height: v.$lineHeight29;
+
+  @include m.sp {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize16, v.$spViewPort), v.$fontSize20);
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight28, v.$spViewPort), v.$lineHeight29);
+  }
 }
 
 footer {
@@ -71,6 +78,13 @@ footer {
     weight: 400;
   }
   line-height: v.$lineHeight24;
+
+  @include m.sp {
+    font: {
+      size: min(f.pixelToVwSize(v.$fontSize12, v.$spViewPort), v.$fontSize14);
+    }
+    line-height: min(f.pixelToVwSize(v.$lineHeight20, v.$spViewPort), v.$lineHeight24);
+  }
 }
 
 img,

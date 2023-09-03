@@ -11,6 +11,11 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
+
+    @include m.sp {
+      flex-direction: column;
+      gap: 24px;
+    }
   }
 
   &__content__logo img {
