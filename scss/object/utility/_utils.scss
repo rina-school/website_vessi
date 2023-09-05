@@ -21,3 +21,16 @@
 .modaal-close:hover:after {
   background: v.$logoColor;
 }
+
+// フェードイン
+.js-fadeIn {
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity, transform;
+  transform: translateY(v.$fadeInAnimationHeight);
+
+  &.is-scrollIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

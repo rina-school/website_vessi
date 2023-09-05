@@ -4,7 +4,7 @@
 
 // ヒーロー
 .p-hero {
-  background-color: v.$subPrimaryColor;
+  background-color: v.$aboutBgColor;
   width: 100%;
 
   &__bg__list__item__img {
@@ -162,7 +162,7 @@
 
 // About
 .p-about {
-  background: transparent radial-gradient(closest-side at 50% 50%, v.$white 0%, v.$subPrimaryColor2 36%, v.$subPrimaryColor 100%) 0% 0% no-repeat padding-box;
+  background: transparent radial-gradient(closest-side at 50% 50%, v.$white 0%, v.$white 36%, v.$aboutBgColor 100%) 0% 0% no-repeat padding-box;
 
   &__message {
     text-align: center;
@@ -202,11 +202,10 @@
 
   &__message__title__main__border {
     position: relative;
-    z-index: v.$zindexAboutText;
   }
 
   &__message__title__main__border::after {
-    background: v.$primaryColor;
+    background-color: v.$primaryColor;
     border-radius: 12px;
     bottom: 24px;
     content: '';
@@ -375,7 +374,7 @@
 
 // 波（wave）
 .p-wave {
-  background-color: v.$subPrimaryColor;
+  background-color: v.$aboutBgColor;
   height: 30px;
   overflow: hidden;
   position: relative;
@@ -855,7 +854,7 @@
     object-position: 0 -100px;
   }
 
-  &__content__category__list__item a {
+  &__content__category__list__item__shoplink {
     border: 1px solid v.$textColor;
     margin: 24px auto 16px;
     padding: 16px 0;
@@ -1008,8 +1007,7 @@
 }
 
 // アイキャッチ（Reviews用）
-.p-eyecatch__fixed {
-  background-attachment: fixed;
+.p-eyecatch {
   background-position: center;
   background-size: cover;
   height: 44.64vw;
@@ -1024,6 +1022,10 @@
   &__background__reviews {
     background-image: url(../img/photo/Weekend_MarbleWhite6.jpg);
     background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
+  }
+
+  &.js-eyecatch-fixed {
+    background-attachment: fixed;
   }
 }
 

@@ -31,11 +31,8 @@ $spViewPort: 375px;
 
 // カラーコード
 $primaryColor: #8FC6AB;
-$subPrimaryColor: #CDE0DD;
-// $subPrimaryColor: #DFEBE9;
-// $subPrimaryColor: #E5EFED;
-// $subPrimaryColor: #F7FAF9;
-$subPrimaryColor2: #F6F9F8;
+$subPrimaryColor: #E5EFED;
+$aboutBgColor: #DFEBE9;
 $logoColor: #005864;
 $textColor: #2C2C2C;
 $reviewsStarColor: #FDB603;
@@ -56,6 +53,7 @@ $pcSectionPaddingWidth: 30px;
 $spSectionPaddingWidth: 16px;
 $pcWaveWidth: 1280px;
 $spWaveWidth: 640px;
+$fadeInAnimationHeight: 50px;
 
 // z-index
 $zindexLoading: 10000;
@@ -63,7 +61,6 @@ $zindexHamburger: 3000;
 $zindexNav: 2000;
 $zindexHeader: 1000;
 $zindexHeroImg: 10;
-$zindexStarYellow: 2;
-$zindexAboutText: 1;
+$zindexStarYellow: 1;
 $zindexStarGray: 0;
 $zindexAboutBorder: -1;

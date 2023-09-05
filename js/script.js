@@ -1,10 +1,10 @@
-$(document).ready(function () {
-
   // 定数
   const $header = $('.l-header');
   const $headerContent = $('.l-header__content');
   const $navBtn = $('.l-header__hamburger');
+  const $nav = $('.l-header__nav');
   const $heroSlick = $('.js-hero-slick');
+  const $heroImg = $('.p-hero__bg__list__item__img');
   const $anchorLink = $('a[href^="#"]');
   const $faqListItem = $('.p-faq__list__item');
   const $productImgPicture = $('.p-product__card__img__picture');
@@ -14,6 +14,8 @@ $(document).ready(function () {
   const $loadingLogoLetter = $('.p-loading__logo__letter');
   const $jsLimitTextReview = $('.js-limit__text__review');
   const $jsLimitTextProduct = $('.js-limit__text__product');
+  const $fadeIn = $('.js-fadeIn');
+  const $eyecatch = $('.p-eyecatch');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -28,12 +30,27 @@ $(document).ready(function () {
     }
   };
 
+  // スクロールした場合の処理
+  $(window).on('scroll', () => {
+    let windowHeight = window.innerHeight;
+    let scrollY = window.scrollY;
+
+    // フェードイン対象要素が指定されたエリア内に来たらフェードイン実行
+    $fadeIn.each(function() {
+      let offset = $(this).offset().top;
+
+      if(scrollY > offset - windowHeight) {
+        $(this).addClass('is-scrollIn')
+      }
+    });
+  })
+
   // ローディング画面
   $(window).on('load', function() {
-    $loadingLogoLetter.delay(2400).fadeOut('slow');
-    $loadingLogoFadeUp.delay(2500).fadeOut('slow');
-    $loadingLogo.delay(2600).fadeOut('slow');
-    $loading.delay(2800).fadeOut('slow');
+    endLoading();
+
+    // ページロードが8秒たったら強制終了
+    setTimeout(endLoading(), 8000);
   });
 
   // 商品一覧の表示文字数制限（SP用）
@@ -49,7 +66,6 @@ $(document).ready(function () {
 
     // スクロールした場合の処理
     $(window).on('scroll', () => {
-
       // cssのアニメーション処理
       $('.p-wave__shape__fill').each(function() {
         let position = $(this).offset().top;
@@ -57,7 +73,6 @@ $(document).ready(function () {
           $(this).addClass('js-animetion-scroll');
         }
       });
-
     });
 
     // cssのアニメーション処理（スクロールなし）
@@ -161,6 +176,30 @@ $(document).ready(function () {
       });
     });
 
+    // 768px以上のpcとタブレット（iosのタブレットは除く）のみアイキャッチをfixedで表示
+    $eyecatch.each(function() {
+      // 768px以上の場合
+      if (window.innerWidth >= 768) {
+        if ((navigator.userAgent.match(/iPhone|iPad/) && 'ontouchend' in document) || (navigator.userAgentData && navigator.userAgentData.mobile)) {
+
+          if ($(this).hasClass('js-eyecatch-fixed')) {
+            $(this).removeClass('js-eyecatch-fixed');
+          }
+  
+        } else {
+          if (!$(this).hasClass('js-eyecatch-fixed')) {
+            $(this).addClass('js-eyecatch-fixed');
+          }
+        }
+
+      // 767px以下の場合
+      } else {
+        if ($(this).hasClass('js-eyecatch-fixed')) {
+          $(this).removeClass('js-eyecatch-fixed');
+        }
+      }
+    });
+
     // 768px以上（PC用）の場合
     if (window.innerWidth >= 768) {
 
@@ -174,6 +213,13 @@ $(document).ready(function () {
 
     // 767px以下（SP用）の場合
     } else {
+
+      // スマホ、タブレットでhero画像の高さを「viewportの高さいっぱい-(headerの高さ+URL、操作エリアの高さ)」にする
+      if ((navigator.userAgent.match(/iPhone|iPad|Android.+Mobile|Macintosh/) && 'ontouchend' in document) || (navigator.userAgentData && navigator.userAgentData.mobile)) {
+        const $height = window.innerHeight;
+        $heroImg.css('height', $height);
+        $nav.css('height', $height);
+      }
 
       // FAQの開閉
       $faqListItem.each(function () {
@@ -221,4 +267,11 @@ $(document).ready(function () {
       });
     });
   }
-})
+
+  // ローディング終了処理
+  function endLoading() {
+    $loadingLogoLetter.delay(2400).fadeOut('slow');
+    $loadingLogoFadeUp.delay(2500).fadeOut('slow');
+    $loadingLogo.delay(2600).fadeOut('slow');
+    $loading.delay(2800).fadeOut('slow');
+  }

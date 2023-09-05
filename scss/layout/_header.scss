@@ -175,7 +175,7 @@
 
       @include m.sp {
         gap: min(f.pixelToVwSize(16px, v.$spViewPort), 40px);
-        margin: calc(56px + v.$spHeaderHeight) min(f.pixelToVwSize(24px,  v.$spViewPort), 40px) 0;
+        margin: min(f.pixelToVwSize(calc(16px + v.$spHeaderHeight), v.$spViewPort), calc(56px + v.$pcHeaderHeight)) min(f.pixelToVwSize(24px,  v.$spViewPort), 40px) 0;
       }
     }
 
