@@ -170,12 +170,12 @@
       align-items: flex-start;
       display: flex;
       flex-direction: column;
-      gap: 40px;
-      margin: calc(56px + v.$pcHeaderHeight) 40px 0;
+      gap: 24px;
+      margin: calc(24px + v.$pcHeaderHeight) 40px 24px;
 
       @include m.sp {
-        gap: min(f.pixelToVwSize(16px, v.$spViewPort), 40px);
-        margin: min(f.pixelToVwSize(calc(16px + v.$spHeaderHeight), v.$spViewPort), calc(56px + v.$pcHeaderHeight)) min(f.pixelToVwSize(24px,  v.$spViewPort), 40px) 0;
+        gap: min(f.pixelToVwSize(16px, v.$spViewPort), 24px);
+        margin: min(f.pixelToVwSize(calc(16px + v.$spHeaderHeight), v.$spViewPort), calc(24px + v.$pcHeaderHeight)) min(f.pixelToVwSize(24px,  v.$spViewPort), 40px) 24px;
       }
     }
 
@@ -251,6 +251,7 @@
     }
 
     .l-header__nav {
+      overflow-y: auto;
       position: fixed;
       transform: translateX(0);
       z-index: v.$zindexNav;

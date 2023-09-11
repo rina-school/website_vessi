@@ -253,13 +253,13 @@ li {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin: 126px 40px 0;
+  gap: 24px;
+  margin: 94px 40px 24px;
 }
 @media screen and (max-width: 767px) {
   .l-header__nav__list {
-    gap: min(4.2666666667vw, 40px);
-    margin: min(17.6vw, 126px) min(6.4vw, 40px) 0;
+    gap: min(4.2666666667vw, 24px);
+    margin: min(17.6vw, 94px) min(6.4vw, 40px) 24px;
   }
 }
 .l-header__nav__list__item span {
@@ -320,6 +320,7 @@ li {
   transform: rotate(-30deg);
 }
 .l-header.js-nav-is-active .l-header__nav {
+  overflow-y: auto;
   position: fixed;
   transform: translateX(0);
   z-index: 2000;
