@@ -47,6 +47,10 @@
 
   // ローディング画面
   $(window).on('load', function() {
+    // スクロール停止
+    scrollStop();
+
+    // ロディング終了処理
     endLoading();
 
     // ページロードが8秒たったら強制終了
@@ -273,5 +277,24 @@
     $loadingLogoLetter.delay(2400).fadeOut('slow');
     $loadingLogoFadeUp.delay(2500).fadeOut('slow');
     $loadingLogo.delay(2600).fadeOut('slow');
-    $loading.delay(2800).fadeOut('slow');
+    $loading.delay(2800).fadeOut('slow', function() {
+      scrollStart();
+    });
+  }
+
+  // スクロール停止の実施
+  function scrollStop() {
+    document.addEventListener('touchmove', noscroll, {passive: false});
+    document.addEventListener('wheel', noscroll, {passive: false});
+  }
+
+  // スクロール停止の解除
+  function scrollStart() {
+    document.removeEventListener('touchmove', noscroll);
+    document.removeEventListener('wheel', noscroll);
+  }
+
+  // スクロール停止・実行用
+  function noscroll(e){
+    e.preventDefault();
   }
