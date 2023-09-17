@@ -1,0 +1,140 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// テクノロジー(Technology)
+.p-technology {
+  &__title h2 {
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+  }
+
+  &__content {
+    background: url(../img//photo/3446622_m.jpg) no-repeat;
+    background: url(../img//webp/3446622_m.webp) no-repeat;
+    background-size: cover;
+    border-radius: 56px;
+    padding: 200px 0;
+    position: relative;
+
+    @include m.sp {
+      background: none;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 0 0;
+    }
+  }
+
+  &__content__img {
+    @include m.sp {
+      background: url(../img//photo/3446622_m.jpg) no-repeat;
+      background: url(../img//webp/3446622_m.webp) no-repeat;
+      background-size: cover;
+      border-radius: 56px;
+      padding: min(f.pixelToVwSize(32px, v.$spViewPort), 56px) 0;
+    }
+  }
+
+  &__img__list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__img__item {
+    max-width: 515px;
+    width: 45.98%;
+
+    @include m.sp {
+      max-width: 700px;
+      width: 90%;
+    }
+  }
+
+  &__img__upper {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  &__content__text {
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    @include m.sp {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      left: auto;
+      position: relative;
+      top: auto;
+    }
+  }
+
+  &__content__text h3 {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize16);
+    }
+    line-height: f.pixelToRemSize(v.$lineHeight28);
+    -webkit-text-decoration: underline v.$primaryColor;
+    text-decoration: underline v.$primaryColor;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 0px;
+
+    @include m.sp {
+      font: {
+        size: min(f.pixelToVwSize(v.$fontSize14, v.$spViewPort), v.$fontSize16);
+      }
+      line-height: min(f.pixelToVwSize(v.$lineHeight24, v.$spViewPort), v.$lineHeight28);
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text__upper {
+    left: min(f.pixelToVwSize(56px, v.$tbViewPort), 80px);
+    position: absolute;
+    top: min(f.pixelToVwSize(40px, v.$tbViewPort), 80px);
+    width: min(f.pixelToVwSize(280px, v.$tbViewPort), 400px);
+
+    @include m.sp {
+      left: auto;
+      position: relative;
+      top: auto;
+      width: 100%;
+    }
+  }
+
+  &__text__insole {
+    left: min(f.pixelToVwSize(532px, v.$tbViewPort), 840px);
+    position: absolute;
+    top: min(f.pixelToVwSize(296px, v.$tbViewPort), 320px);
+    width: min(f.pixelToVwSize(136px, v.$tbViewPort), 232px);
+
+    @include m.sp {
+      left: auto;
+      position: relative;
+      top: auto;
+      width: 100%;
+    }
+  }
+
+  &__text__outsole {
+    left: min(f.pixelToVwSize(96px, v.$tbViewPort), 224px);
+    position: absolute;
+    top: min(f.pixelToVwSize(424px, v.$tbViewPort), 520px);
+    width: min(f.pixelToVwSize(320px, v.$tbViewPort), 400px);
+
+    @include m.sp {
+      left: auto;
+      position: relative;
+      top: auto;
+      width: 100%;
+    }
+  }
+}

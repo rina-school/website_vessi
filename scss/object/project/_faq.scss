@@ -1,0 +1,99 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// FAQ
+.p-faq {
+  &__title__area {
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 48px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item__question {
+    background: v.$subPrimaryColor;
+    border-radius: 16px;
+    cursor: pointer;
+    padding: 16px 24px;
+    position: relative;
+    transition: padding-left .4s;
+
+    @include m.sp {
+      padding: 16px min(f.pixelToVwSize(16px, v.$spViewPort), 24px);
+    }
+
+    &:hover {
+      padding-left: 40px;
+
+      @include m.sp {
+        padding-left: min(f.pixelToVwSize(24px, v.$spViewPort), 40px);
+      }
+    } 
+  }
+
+  // 開閉ボタン
+  &__item__question::before
+  , &__item__question::after {
+    background-color: v.$logoColor;
+    border-radius: 16px;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+    width: 20px;
+
+    @include m.sp {
+      right: min(f.pixelToVwSize(16px, v.$spViewPort), 24px);
+      width: min(f.pixelToVwSize(20px, v.$spViewPort), 20px);
+    }
+
+  }
+
+  &__item__answer {
+    margin: 16px 24px 0;
+
+    @include m.sp {
+      display: none;
+    }
+  }
+
+  &__other {
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  &__item.js-faq-is-not-active {
+    .p-faq__item__question::after {
+      transform: rotate(90deg) translateY(-50%);
+    }
+  }
+
+  &__faqlink {
+    color: v.$ankerLinkColor;
+
+    &:hover {
+      -webkit-text-decoration: underline v.$ankerLinkColor;
+      text-decoration: underline v.$ankerLinkColor;
+      text-decoration-thickness: 1px;
+    }
+  }
+}

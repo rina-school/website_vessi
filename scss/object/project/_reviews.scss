@@ -1,0 +1,86 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// お客様の声（Reviews）
+.p-reviews {
+  &__title__area {
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    @include m.tb {
+      flex-direction: column;
+      gap: 48px;
+    }
+  }
+
+  &__content__comment {
+    border: 2px solid v.$subPrimaryColor;
+    border-radius: 16px;
+    flex: 1;
+    padding: 40px;
+
+    @include m.sp {
+      padding: 30px min(f.pixelToVwSize(16px, v.$spViewPort), 40px);
+    }
+  }
+
+  &__content__stars {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__stars__rating {
+    color: v.$reviewsStarColorGray; 
+    display: inline-block;
+    font-size: 26px;
+    position: relative;
+    white-space: nowrap;
+    z-index: v.$zindexStarGray;
+  }
+
+  &__stars__rating:before
+  , &__stars__rating:after {
+    content: '★ ★ ★ ★ ★';
+  }
+
+  &__stars__rating:after {
+    color: v.$reviewsStarColor;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    z-index: v.$zindexStarYellow;
+  }
+
+  &__stars__rating[data-rate="5"]:after {
+    width: 100%; 
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+  }
+
+  &__author {
+    text-align: center;
+  }
+}

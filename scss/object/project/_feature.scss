@@ -1,0 +1,122 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// 特徴（Feature）
+.p-feature {
+  &__content {
+    align-items: stretch;
+    display: flex;
+    gap: min(f.pixelToVwSize(90px, v.$pcViewPort), 90px);
+    height: auto;
+    justify-content: center;
+
+    @include m.sp {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__img {
+    flex: 1;
+
+    @include m.sp {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__img img {
+    border-radius: 56px;
+    height: 100%;
+    max-height: calc(100vh - v.$pcHeaderHeight);
+    object-fit: cover;
+    position: sticky;
+    top: v.$pcHeaderHeight;
+    width: auto;
+
+    @include m.sp {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    flex: 1;
+
+    @include m.sp {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__title h2 {
+    @include m.sp {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 56px;
+    margin-top: 16px;
+
+    @include m.sp {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__content__item {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @include m.sp {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: min(f.pixelToVwSize(40px, v.$spViewPort), 48px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item__img {
+    flex: 1;
+    height: auto;
+    max-width: 70px;
+    width: f.pixelToVwSize(70px, v.$pcViewPort);
+
+    @include m.sp {
+      flex: 0 1 auto;
+      width: f.pixelToVwSize(70px, v.$spViewPort);
+    }
+  }
+
+  &__item__img img {
+    height: auto;
+    width: 100%;
+  }
+
+  &__item__text {
+    flex: 1;
+
+    @include m.sp {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__item__text h3 {
+    margin-bottom: 16px;
+
+    @include m.sp {
+      text-align: center;
+    }
+  }
+}

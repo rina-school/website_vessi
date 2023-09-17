@@ -21,7 +21,18 @@
 @forward './object/component/display';
 
 /* Project ------------ */ 
-@forward './object/project/index';
+@forward './object/project/hero';
+@forward './object/project/about';
+@forward './object/project/wave';
+@forward './object/project/feature';
+@forward './object/project/technology';
+@forward './object/project/product';
+@forward './object/project/warranty';
+@forward './object/project/eyecatch';
+@forward './object/project/reviews';
+@forward './object/project/faq';
+@forward './object/project/promotion';
+@forward './object/project/loading';
 
 /* Utility ------------ */
 @forward './object/utility/utils';

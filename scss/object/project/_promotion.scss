@@ -1,0 +1,64 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// プロモーション（Promotion）
+.p-promotion {
+  background: linear-gradient(rgba(#000, 0.55), rgba(#000, 0.55)), url(../img/photo/charcoalgrey3.jpg) no-repeat center center/cover;
+  background: linear-gradient(rgba(#000, 0.55), rgba(#000, 0.55)), url(../img/webp/charcoalgrey3.webp) no-repeat center center/cover;
+  text-align: center;
+  width: 100%;
+
+  &__title, &__shoplink__attention, span {
+    color: v.$white;
+    text-align: center;
+  }
+
+  &__title {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize20);
+      style: normal;
+    }
+    line-height: v.$lineHeight29;
+
+    @include m.sp {
+      font: {
+        size: min(f.pixelToVwSize(v.$fontSize16, v.$spViewPort), v.$fontSize20);
+      }
+      line-height: min(f.pixelToVwSize(v.$lineHeight28, v.$spViewPort), v.$lineHeight29);
+    }
+  }
+
+  &__shoplink {
+    border: 1px solid v.$white;
+    margin-bottom: 32px;
+    margin-top: 48px;
+    padding: 16px 72px;
+    text-align: center;
+
+    @include m.sp {
+      margin-top: min(f.pixelToVwSize(24px, v.$spViewPort), 48px);
+      padding: min(f.pixelToVwSize(8px, v.$spViewPort), 16px) min(f.pixelToVwSize(56px, v.$spViewPort), 72px);
+    }
+  }
+
+  &__shoplink::after {
+    background-color: v.$textColor;
+  }
+
+  &__shoplink:hover {
+    color: v.$white;
+
+    &::after {
+      background-color: v.$white;
+    }
+  }
+
+  &__shoplink__attention {
+    margin-bottom: 16px;
+  }
+
+  &__shoplink__attention:last-child {
+    margin-bottom: 0;
+  }
+}

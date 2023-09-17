@@ -1,0 +1,218 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// 商品（production）
+.p-product {
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    text-align: left;
+  }
+
+  &__lineup__list {
+    display: grid;
+    gap: min(f.pixelToVwSize(35px, v.$pcViewPort), 35px);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin: 56px 0;
+
+    @include m.sp {
+      grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    }
+  }
+
+  &__lineup__item {
+    background: v.$subPrimaryColor;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 24px;
+    text-align: center;
+
+    @include m.sp {
+      padding: 30px min(f.pixelToVwSize(16px, v.$spViewPort), 24px);
+    }
+  }
+
+  &__lineup__shoplink {
+    padding: 16px 0;
+    width: 100%;
+
+    @include m.sp {
+      padding: min(f.pixelToVwSize(8px, v.$spViewPort), 16px) 0;
+    }
+  }
+
+  &__lineup__shoplink:hover {
+    color: v.$white;
+  }
+
+  &__lineup__shoplink::after {
+    background-color: v.$textColor;
+  }
+
+  &__lineup__shoplink:hover::after {
+    background-color: v.$white;
+  }
+
+  &__card__picture {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__card__img {
+    aspect-ratio: 300 / 197;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    max-width: 220px;
+    width: 100%;
+  }
+
+  &__card__img:hover {
+    transform: scale(1.1,1.1);
+  }
+
+  &__card__text {
+    flex: 1;
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__card__title {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  &__card__description {
+    text-align: left;
+  }
+
+  &__accessories {
+    align-items: center;
+    flex-direction: row;
+    gap: min(f.pixelToVwSize(32px, v.$pcViewPort), 32px);
+    grid-column: span 3;
+    justify-content: center;
+
+    @include m.tb {
+      flex-direction: column;
+      gap: 0;
+      grid-column: span 1;
+      justify-content: space-between;
+    }
+  }
+
+  &__accessories &__card__picture {
+    margin: 0;
+
+    @include m.tb {
+      margin: 0 auto;
+    }
+  }
+
+  &__accessories__text {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @include m.tb {
+      flex-grow: 1
+    }
+  }
+
+  &__accessories__title {
+    font: {
+      size: f.pixelToRemSize(v.$fontSize16);
+    }
+    line-height: v.$lineHeight28;
+    text-align: left;
+  }
+
+  &__accessories__shoplink {
+    width: 60%;
+
+    @include m.tb {
+      width: 100%;
+    }
+  }
+
+  &__category__list {
+    display: grid;
+    gap: min(f.pixelToVwSize(35px, v.$pcViewPort), 35px);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    @include m.sp {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
+
+  &__category__item {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__category__img {
+    border-radius: 16px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    width: min(100%, 350px);
+
+    @include m.sp {
+      width: 100%;
+    }
+  }
+
+  &__category__img img {
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    object-fit: cover;
+    width: min(100%, 350px);
+
+    @include m.sp {
+      width: 100%;
+    }
+  }
+
+  &__category__img img:hover {
+    transform: scale(1.1,1.1);
+  }
+
+  &__category__img__men {
+    object-position: 0 -100px;
+  }
+
+  &__category__shoplink {
+    border: 1px solid v.$textColor;
+    margin: 24px auto 16px;
+    padding: 16px 0;
+    width: 80%;
+
+    @include m.sp {
+      padding: min(f.pixelToVwSize(8px, v.$spViewPort), 16px) 0;
+    }
+  }
+
+  &__category__item a:hover {
+    color: v.$white;
+  }
+
+  &__category__item a::after {
+    background-color: v.$textColor;
+  }
+
+  &__category__item a:hover::after {
+    background-color: v.$white;
+  }
+
+  &__shoplink__attention {
+    margin-top: 40px;
+  }
+
+  &__shoplink__attention p {
+    text-align: center;
+  }
+}

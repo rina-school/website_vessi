@@ -18,12 +18,12 @@
     }
   }
 
-  &__content__logo img {
+  &__logo img {
     height: 50px;
     width: auto;
   }
 
-  &__content__text__list {
+  &__text__list {
     align-items: center;
     display: flex;
     gap: 4px;
@@ -31,11 +31,11 @@
     margin-bottom: 24px;
   }
 
-  &__content__text__list__item {
+  &__text__item {
     position: relative;
   }
 
-  &__content__text__list__item::after {
+  &__text__item::after {
     background: v.$textColor;
     content: "";
     height: 60%;
@@ -46,11 +46,11 @@
     width: 1px;
   }
 
-  &__content__text__list__item:last-child::after {
+  &__text__item:last-child::after {
     display: none;
   }
 
-  &__content__text__list__item a:hover {
+  &__text__item a:hover {
     -webkit-text-decoration: underline v.$textColor;
     text-decoration: underline v.$textColor;
     text-decoration-thickness: 1px;

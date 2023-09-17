@@ -62,7 +62,7 @@
   }
 
   // spのヘッダーのみ変更する
-  &.l-header__content__shop::after {
+  &.l-header__shoplink::after {
     @include m.sp {
       display: none;
     }

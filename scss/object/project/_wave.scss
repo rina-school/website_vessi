@@ -1,0 +1,46 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+// 波（wave）
+.p-wave {
+  background-color: v.$aboutBgColor;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  @include m.sp {
+    height: min(f.pixelToVwSize(15px, v.$spViewPort), 30px);
+  }
+
+  &__shape__fill {
+    background: url(../img/icon/waves.svg) repeat-x;
+    background-size: v.$pcWaveWidth 30px;
+    animation: waveBg 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    transform: translate3d(0, 0, 0);
+    width: calc(v.$pcWaveWidth * 3);
+
+    @include m.sp {
+      background: url(../img/icon/waves.svg) repeat-x;
+      background-size: min(f.pixelToVwSize(v.$spWaveWidth, v.$spViewPort), v.$pcWaveWidth) min(f.pixelToVwSize(15px, v.$spViewPort), 30px);
+      width: calc(min(f.pixelToVwSize(v.$spWaveWidth, v.$spViewPort), v.$pcWaveWidth) * 3);
+    }
+  }
+
+  @keyframes waveBg {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: calc(-1 * v.$pcWaveWidth);
+
+      @include m.sp {
+        margin-left: calc(-1 * min(f.pixelToVwSize(v.$spWaveWidth, v.$spViewPort), v.$pcWaveWidth));
+      }
+    }
+  }
+}

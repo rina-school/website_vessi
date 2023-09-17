@@ -99,7 +99,7 @@
     }
   }
 
-  &__content__logo {
+  &__logo {
     align-items: center;
     display: flex;
     grid-column: 2/3;
@@ -120,7 +120,7 @@
     }
   }
 
-  &__content__shop {
+  &__shoplink {
     grid-column: 3/4;
     grid-row: 1/3;
     position: absolute;
@@ -146,7 +146,7 @@
     }
   }
 
-  &__content__shop:hover {
+  &__shoplink:hover {
     border-bottom: v.$logoColor 1px solid;
     padding-top: 1px;
 
@@ -179,12 +179,12 @@
       }
     }
 
-    &__list__item span {
+    &__item span {
       color: v.$logoColor;
       font-weight: 700;
     }
 
-    &__list__item__shop {
+    &__shoplink {
       color: v.$logoColor;
       font-weight: 400;
       padding: 16px 72px;
@@ -195,11 +195,11 @@
       }
     }
 
-    &__list__item__shop::after {
+    &__shoplink::after {
       background-color: v.$logoColor;
     }
 
-    &__list__item__logo {
+    &__logo {
       width: auto;
       height: auto;
 
@@ -212,7 +212,7 @@
       }
     }
 
-    &__list__item__title__en {
+    &__title-en {
       font: {
         family: v.$fontFamilyLora;
         size: f.pixelToRemSize(v.$fontSize20);
@@ -257,7 +257,7 @@
       z-index: v.$zindexNav;
     }
 
-    .l-header__nav__list__item:not(:last-child) {
+    .l-header__nav__item:not(:last-child) {
       transition: padding-left .4s;
 
       &:hover {
@@ -269,7 +269,7 @@
       }
     }
 
-    .l-header__nav__list__item__shop:hover {
+    .l-header__nav__shoplink:hover {
       background-color: v.$logoColor;
       color: v.$white;
 

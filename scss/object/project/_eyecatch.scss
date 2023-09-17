@@ -1,0 +1,32 @@
+@use '../../foundation/variables' as v;
+@use '../../foundation/mixin' as m;
+@use '../../foundation/function' as f;
+
+.p-eyecatch {
+  background-position: center;
+  background-size: cover;
+  height: 44.64vw;
+  margin-top: 100px;
+  max-height: 530px;
+  width: 100%;
+
+  @include m.sp {
+    margin-top: min(f.pixelToVwSize(64px, v.$spViewPort), 100px);
+  }
+
+  // アイキャッチ（Reviews用）
+  &__background__reviews {
+    background-image: url(../img/photo/Weekend_MarbleWhite6.jpg);
+    background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
+  }
+
+  // アイキャッチ（FAQ用）
+  &__background__faq {
+    background-image: url(../img/photo/Weekend_MarbleWhite5.jpg);
+    background-image: url(../img/webp/Weekend_MarbleWhite5.webp);
+  }
+
+  &.js-eyecatch-fixed {
+    background-attachment: fixed;
+  }
+}

@@ -4,10 +4,10 @@
   const $navBtn = $('.l-header__hamburger');
   const $nav = $('.l-header__nav');
   const $heroSlick = $('.js-hero-slick');
-  const $heroImg = $('.p-hero__bg__list__item__img');
+  const $heroImg = $('.p-hero__bg__img');
   const $anchorLink = $('a[href^="#"]');
-  const $faqListItem = $('.p-faq__list__item');
-  const $productImgPicture = $('.p-product__card__img__picture');
+  const $faqItem = $('.p-faq__item');
+  const $productImg = $('.p-product__card__img');
   const $loading = $('.p-loading');
   const $loadingLogo = $('.p-loading__logo');
   const $loadingLogoFadeUp = $('.p-loading__logo__fadeup');
@@ -80,7 +80,7 @@
     });
 
     // cssのアニメーション処理（スクロールなし）
-    $('.p-hero__text__catchcopy__content, .p-hero__scroll').each(function() {
+    $('.p-hero__catchcopy__content, .p-hero__scroll').each(function() {
       if (!$(this).hasClass('js-animation')) {
         $(this).addClass('js-animation');
       }
@@ -161,8 +161,8 @@
     });
 
     // 商品画像をクリックした際のモーダルウィンドウ
-    $productImgPicture.on('click', function(e) {
-      $productImgPicture.modaal({
+    $productImg.on('click', function(e) {
+      $productImg.modaal({
         type: 'image',
         overlay_close: true,//モーダル背景クリック時に閉じるか
         before_open: function(){// モーダルが開く前に行う動作
@@ -208,7 +208,7 @@
     if (window.innerWidth >= 768) {
 
       // FAQの開閉
-      $faqListItem.each(function () {
+      $faqItem.each(function () {
         if ($(this).hasClass('js-faq-is-not-active')) {
           $(this).removeClass('js-faq-is-not-active');
           $(this).children('dd').slideDown();
@@ -226,7 +226,7 @@
       }
 
       // FAQの開閉
-      $faqListItem.each(function () {
+      $faqItem.each(function () {
         if (!$(this).hasClass('js-faq-is-not-active')) {
           $(this).addClass('js-faq-is-not-active');
           $(this).children('dd').slideUp();
@@ -235,8 +235,8 @@
     }
 
     // FAQの開閉
-    $faqListItem.off('click');
-    $faqListItem.on('click', function(e) {
+    $faqItem.off('click');
+    $faqItem.on('click', function(e) {
       $(this).toggleClass('js-faq-is-not-active');
       $(this).children('dd').slideToggle();
       e.stopPropagation();
