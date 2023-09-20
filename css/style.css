@@ -1334,6 +1334,10 @@ li {
 }
 .p-product__shoplink__attention p {
   text-align: center;
+  margin-bottom: 16px;
+}
+.p-product__shoplink__attention p:last-child {
+  margin-bottom: 0;
 }
 
 .p-warranty__content {

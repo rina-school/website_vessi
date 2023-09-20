@@ -214,5 +214,10 @@
 
   &__shoplink__attention p {
     text-align: center;
+    margin-bottom: 16px;
+  }
+
+  &__shoplink__attention p:last-child {
+    margin-bottom: 0;
   }
 }
