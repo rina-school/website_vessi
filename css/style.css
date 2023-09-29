@@ -1196,6 +1196,7 @@ li {
 }
 .p-product__card__img {
   aspect-ratio: 300/197;
+  cursor: pointer;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
