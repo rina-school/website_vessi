@@ -1473,12 +1473,12 @@ li {
   background-image: url(../img/photo/Weekend_MarbleWhite6.jpg);
   background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
 }
+.p-eyecatch__background__reviews.js-eyecatch-fixed {
+  background-attachment: fixed;
+}
 .p-eyecatch__background__faq {
   background-image: url(../img/photo/Weekend_MarbleWhite5.jpg);
   background-image: url(../img/webp/Weekend_MarbleWhite5.webp);
-}
-.p-eyecatch.js-eyecatch-fixed {
-  background-attachment: fixed;
 }
 
 .p-reviews__title__area {

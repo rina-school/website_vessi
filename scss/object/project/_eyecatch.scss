@@ -18,15 +18,15 @@
   &__background__reviews {
     background-image: url(../img/photo/Weekend_MarbleWhite6.jpg);
     background-image: url(../img/webp/Weekend_MarbleWhite6.webp);
+
+    &.js-eyecatch-fixed {
+      background-attachment: fixed;
+    }
   }
 
   // アイキャッチ（FAQ用）
   &__background__faq {
     background-image: url(../img/photo/Weekend_MarbleWhite5.jpg);
     background-image: url(../img/webp/Weekend_MarbleWhite5.webp);
-  }
-
-  &.js-eyecatch-fixed {
-    background-attachment: fixed;
   }
 }

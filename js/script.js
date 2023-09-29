@@ -15,7 +15,7 @@
   const $jsLimitTextReview = $('.js-limit__text__review');
   const $jsLimitTextProduct = $('.js-limit__text__product');
   const $fadeIn = $('.js-fadeIn');
-  const $eyecatch = $('.p-eyecatch');
+  const $eyecatchReviews = $('.p-eyecatch__background__reviews');
 
   // スクロールジャンクの警告メッセージへの対応
   jQuery.event.special.touchstart = {
@@ -181,7 +181,7 @@
     });
 
     // 768px以上のpcとタブレット（iosのタブレットは除く）のみアイキャッチをfixedで表示
-    $eyecatch.each(function() {
+    $eyecatchReviews.each(function() {
       // 768px以上の場合
       if (window.innerWidth >= 768) {
         if ((navigator.userAgent.match(/iPhone|iPad/) && 'ontouchend' in document) || (navigator.userAgentData && navigator.userAgentData.mobile)) {
